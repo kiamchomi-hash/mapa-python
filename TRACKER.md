@@ -17,6 +17,11 @@ Para marcar una casilla, editá este archivo y cambiá `- [ ]` por `- [x]`. Las 
 
 - [ ] Berkeley CS61A y Composing Programs (en paralelo con los niveles 3–7) (180 h)
 
+## Track paralelo de terminal y Linux
+
+- [ ] Sólido: archivos, permisos, pipes, `PATH` (Missing Semester e Introduction to Linux) (30 h)
+- [ ] Avanzado: scripts de Bash, procesos, SSH, `grep`/`sed`/`awk`, cron (40 h)
+
 ## Etapa 2 – Programador sólido
 
 - [ ] Nivel 6 – Estructuras de datos y pensamiento algorítmico: pilas, colas, listas enlazadas, árboles, tablas hash, heaps, recursión, ordenamiento, Big O (60 h)
@@ -48,7 +53,7 @@ Requisito: Etapa 1, Etapa 2, CS61A y la especialización Web.
   - [ ] Aplicación web con Django y PostgreSQL, publicada online
   - [ ] Análisis de datos reales con pandas, documentado
 
-**Hito de empleo (1110 h acumuladas):** con todo lo anterior marcado, ya podés postularte a puestos junior.
+**Hito de empleo (1180 h acumuladas):** con todo lo anterior marcado, ya podés postularte a puestos junior.
 
 ## Etapa 3 – Python avanzado
 
@@ -70,6 +75,7 @@ Requisito: Etapa 1, Etapa 2, CS61A y la especialización Web.
 - [ ] Sistemas operativos (OSTEP; opcional MIT 6.1810, 180 h más) (120 h)
 - [ ] Redes (Stanford CS144) (170 h)
 - [ ] Seguridad (MIT 6.5660) (170 h)
+- [ ] Terminal y Linux, escalón experto: shell POSIX y administración de un servidor Linux (50 h)
 
 ## Lenguajes de sistemas: C y Rust
 

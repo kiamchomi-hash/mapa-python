@@ -4,9 +4,9 @@ Actualizado: 11 de octubre de 2026
 
 ## Cómo usar este mapa
 
-El mapa va de cero a experto en Python y se organiza alrededor de un hito: el primer empleo como programador junior. Hasta ese hito hay dos etapas de fundamentos (niveles 0–10), un complemento de ciencias de la computación (Berkeley CS61A), la especialización Web y el nivel 14, orientado al empleo. Después siguen la Etapa 3 (Python avanzado, niveles 11–13, con cuatro especializaciones: web, automatización, datos e IA), dos tracks paralelos (matemáticas y sistemas), un track de lenguajes de sistemas (C y Rust), un track de experto en backend, infraestructura y cloud, la Etapa 4 (bloques A–D, para entender Python por dentro) y un camino a IA que termina con un modelo de lenguaje construido desde cero. El orden exacto está en "Orden recomendado" y las horas de cada parte, en "Tiempo estimado".
+El mapa va de cero a experto en Python y se organiza alrededor de un hito: el primer empleo como programador junior. Hasta ese hito hay dos etapas de fundamentos (niveles 0–10), un track de terminal y Linux que corre en paralelo desde el nivel 0, un complemento de ciencias de la computación (Berkeley CS61A), la especialización Web y el nivel 14, orientado al empleo. Después siguen la Etapa 3 (Python avanzado, niveles 11–13, con cuatro especializaciones: web, automatización, datos e IA), dos tracks paralelos (matemáticas y sistemas), un track de lenguajes de sistemas (C y Rust), un track de experto en backend, infraestructura y cloud, la Etapa 4 (bloques A–D, para entender Python por dentro) y un camino a IA que termina con un modelo de lenguaje construido desde cero. El orden exacto está en "Orden recomendado" y las horas de cada parte, en "Tiempo estimado".
 
-**Política de fuentes:** casi todas las fuentes son cursos de universidades, publicaciones de fundaciones y organismos de estándares (PSF, IETF, OWASP, Linux Foundation y CNCF, Apache Software Foundation) o la documentación oficial de cada tecnología. Las excepciones se indican donde aparecen y son estas: dos libros pagos (Modern C, de la editorial Manning, y CS:APP, el libro de CMU 15-213); un curso universitario publicado en una plataforma comercial (Cryptography I de Stanford, en Coursera); materiales de empresas, que son la formación de los proveedores cloud (AWS, Google Cloud y Microsoft) y los libros de SRE de Google; las certificaciones pagas (AWS y CKA); el British Council para el inglés técnico; y Exercism, una organización sin fines de lucro que se usa solo como banco de ejercicios. Todas las fuentes se verificaron el 11 de octubre de 2026.
+**Política de fuentes:** casi todas las fuentes son cursos de universidades, publicaciones de fundaciones y organismos de estándares (PSF, IETF, OWASP, Linux Foundation y CNCF, Apache Software Foundation, The Open Group) o la documentación oficial de cada tecnología. Las excepciones se indican donde aparecen y son estas: dos libros pagos (Modern C, de la editorial Manning, y CS:APP, el libro de CMU 15-213); un curso universitario publicado en una plataforma comercial (Cryptography I de Stanford, en Coursera); materiales de empresas, que son la formación de los proveedores cloud (AWS, Google Cloud y Microsoft) y los libros de SRE de Google; las certificaciones pagas (AWS y CKA); el British Council para el inglés técnico; y Exercism, una organización sin fines de lucro que se usa solo como banco de ejercicios. Todas las fuentes se verificaron el 11 de octubre de 2026.
 
 - **Versión de referencia:** Python 3.15, la última estable ([What's New in 3.15](https://docs.python.org/3/whatsnew/3.15.html)).
 - **Regla de avance:** no pasar de nivel hasta resolver los ejercicios del nivel sin mirar la teoría. Cada tabla tiene una columna de ejercicios con la fuente de práctica de cada nivel.
@@ -19,10 +19,10 @@ Para marcar tu avance tema por tema: [TRACKER.md](TRACKER.md)
 
 Las secciones de este documento siguen este orden; los tracks paralelos aparecen justo después de la etapa con la que empiezan. Cada paso depende solo de los anteriores.
 
-1. **Etapa 1** (niveles 0–5). Desde el nivel 3 se suma en paralelo el complemento de ciencias de la computación (Berkeley CS61A).
+1. **Etapa 1** (niveles 0–5). Desde el nivel 0 corre en paralelo el track de terminal y Linux (escalones sólido y avanzado; el experto va con el track de sistemas). Desde el nivel 3 se suma en paralelo el complemento de ciencias de la computación (Berkeley CS61A).
 2. **Etapa 2** (niveles 6–10). CS61A termina junto con el nivel 7.
 3. **Especialización Web** (Harvard CS50W): la primera especialización del nivel 13, adelantada porque es requisito del nivel 14.
-4. **Nivel 14 – Listo para trabajar.** Al terminarlo llegás al **hito de empleo: ya podés postularte a puestos junior** (unas 1110 h acumuladas: 2,1 años a 10 h por semana o 13 meses a 20 h por semana). Este hito no depende de la Etapa 3, de las matemáticas ni de la IA.
+4. **Nivel 14 – Listo para trabajar.** Al terminarlo llegás al **hito de empleo: ya podés postularte a puestos junior** (unas 1180 h acumuladas: 2,3 años a 10 h por semana o 14 meses a 20 h por semana). Este hito no depende de la Etapa 3, de las matemáticas ni de la IA.
 5. **Etapa 3** (niveles 11–12), junto con los tracks paralelos de matemáticas y de sistemas y con el track de C y Rust. El track de experto empieza en paralelo.
 6. **Especializaciones restantes** del nivel 13: automatización y datos.
 7. **Etapa 4** (bloques A–D). El bloque A requiere matemática discreta; el bloque C requiere sistemas operativos y CMU 15-213.
@@ -36,18 +36,18 @@ El mapa completo equivale aproximadamente a una carrera de grado en computación
 
 | Paso | Contenido | Horas | Acumulado | A 10 h por semana | A 20 h por semana |
 | --- | --- | --- | --- | --- | --- |
-| 1–2 | Etapa 1 (125), CS61A (180) y Etapa 2 (315) | 620 | 620 | 62 semanas (1,2 años) | 31 semanas (7 meses) |
-| 3 | Especialización Web | 150 | 770 | 77 semanas (1,5 años) | 39 semanas (9 meses) |
-| 4 | Nivel 14 – Listo para trabajar, con portfolio | 340 | **1110** | **111 semanas (2,1 años)** | **56 semanas (13 meses)** |
-| | **Hito de empleo: podés postularte a puestos junior** | | **1110** | | |
-| 5 | Etapa 3 (niveles 11–12) | 100 | 1210 | 121 semanas (2,3 años) | 61 semanas (1,2 años) |
-| 5 | Track de matemáticas | 770 | 1980 | 198 semanas (3,8 años) | 99 semanas (1,9 años) |
-| 5 | Track de sistemas | 630 | 2610 | 261 semanas (5 años) | 131 semanas (2,5 años) |
-| 5 | C y Rust | 620 | 3230 | 323 semanas (6,2 años) | 162 semanas (3,1 años) |
-| 6 | Especializaciones de automatización y datos | 250 | 3480 | 348 semanas (6,7 años) | 174 semanas (3,3 años) |
-| 5–7 | Track de experto | 1545 | 5025 | 503 semanas (9,7 años) | 251 semanas (4,8 años) |
-| 7 | Etapa 4 | 390 | 5415 | 542 semanas (10,4 años) | 271 semanas (5,2 años) |
-| 8 | Especialización IA (220) y Camino a IA (590) | 810 | **6225** | **623 semanas (12 años)** | **311 semanas (6 años)** |
+| 1–2 | Etapa 1 (125), CS61A (180), Etapa 2 (315) y terminal y Linux, escalones sólido y avanzado (70) | 690 | 690 | 69 semanas (1,3 años) | 35 semanas (8 meses) |
+| 3 | Especialización Web | 150 | 840 | 84 semanas (1,6 años) | 42 semanas (10 meses) |
+| 4 | Nivel 14 – Listo para trabajar, con portfolio | 340 | **1180** | **118 semanas (2,3 años)** | **59 semanas (14 meses)** |
+| | **Hito de empleo: podés postularte a puestos junior** | | **1180** | | |
+| 5 | Etapa 3 (niveles 11–12) | 100 | 1280 | 128 semanas (2,5 años) | 64 semanas (1,2 años) |
+| 5 | Track de matemáticas | 770 | 2050 | 205 semanas (3,9 años) | 103 semanas (2 años) |
+| 5 | Track de sistemas (630) y terminal y Linux, escalón experto (50) | 680 | 2730 | 273 semanas (5,3 años) | 137 semanas (2,6 años) |
+| 5 | C y Rust | 620 | 3350 | 335 semanas (6,4 años) | 168 semanas (3,2 años) |
+| 6 | Especializaciones de automatización y datos | 250 | 3600 | 360 semanas (6,9 años) | 180 semanas (3,5 años) |
+| 5–7 | Track de experto | 1545 | 5145 | 515 semanas (9,9 años) | 257 semanas (4,9 años) |
+| 7 | Etapa 4 | 390 | 5535 | 554 semanas (10,6 años) | 277 semanas (5,3 años) |
+| 8 | Especialización IA (220) y Camino a IA (590) | 810 | **6345** | **635 semanas (12,2 años)** | **317 semanas (6,1 años)** |
 
 Los tracks paralelos se reparten las mismas horas semanales, así que estudiarlos en paralelo no cambia el total: cambia en qué momento terminás cada uno. El calendario supone 52 semanas de estudio por año; con vacaciones, sumá un 10%.
 
@@ -75,6 +75,18 @@ Berkeley CS61A es el primer curso de la carrera de computación de Berkeley y es
 | Abstracción, funciones de orden superior, recursión, listas enlazadas, árboles, objetos, iteradores, generadores, construir un intérprete | [Berkeley CS61A](https://cs61a.org/) + su libro [Composing Programs](https://www.composingprograms.com/) | Todos los labs, homework y proyectos del curso (incluido el intérprete de Scheme) | 180 |
 
 **Horas:** 180, repartidas entre los niveles 3 y 7.
+
+## Track paralelo de terminal y Linux (desde el nivel 0)
+
+Casi todo el trabajo profesional con Python (servidores, Git, Docker, cloud) pasa por la terminal de Linux. Los escalones sólido y avanzado se hacen antes del hito de empleo; el experto va junto con el track de sistemas.
+
+| Escalón | Qué dominar | Cuándo empezar | Fuente | Ejercicios | Horas |
+| --- | --- | --- | --- | --- | --- |
+| Sólido | Navegar el sistema de archivos, crear y mover archivos, permisos, pipes y redirecciones, variables de entorno y `PATH`, un editor de terminal | Con el nivel 0 | [MIT Missing Semester](https://missing.csail.mit.edu/2026/) (edición 2026: clases de shell y de entorno de línea de comandos) + [Introduction to Linux](https://training.linuxfoundation.org/training/introduction-to-linux/) de la Linux Foundation (gratis). En Windows, Linux dentro de Windows con [WSL](https://learn.microsoft.com/windows/wsl/) (Microsoft) | Ejercicios de las clases de shell y de entorno de línea de comandos de Missing Semester; hacer todo el trabajo del plan desde la terminal | 30 |
+| Avanzado | Scripts de Bash, procesos y señales, trabajos en segundo plano, SSH, herramientas de texto (`grep`, `find`, `sed`, `awk`), tareas programadas con cron | Con el nivel 9 | [Manual oficial de GNU Bash](https://www.gnu.org/software/bash/manual/) + [páginas de manual de Linux](https://man7.org/linux/man-pages/) + Missing Semester (clases de entorno de desarrollo y de debugging) | [Exercism, track de Bash](https://exercism.org/tracks/bash) + automatizar con un script de Bash una tarea real del plan (backups de las carpetas de nivel, por ejemplo) | 40 |
+| Experto | Shell portátil según el estándar POSIX; administración de servidores Linux: servicios, logs, usuarios, red | Con el track de sistemas | [Especificación POSIX del shell](https://pubs.opengroup.org/onlinepubs/9799919799/utilities/V3_chap02.html) (The Open Group) + OSTEP | Reescribir el script anterior en shell POSIX portable; montar y administrar un servidor Linux propio (una máquina virtual) que sirva uno de tus proyectos | 50 |
+
+**Horas del track:** 120 (70 antes del hito de empleo y 50 con el track de sistemas).
 
 ## Etapa 2 – Programador sólido (niveles 6–10)
 
@@ -117,7 +129,7 @@ Es la capa práctica que piden los avisos de empleo. Requiere solo la Etapa 1, l
 | Preparación para entrevistas técnicas | Resolver problemas de algoritmos y estructuras de datos en voz alta y con tiempo limitado, entrevistas conductuales, y diseño de sistemas a nivel junior: explicar y defender la arquitectura de tus proyectos del portfolio | [Stanford CS9 Problem-Solving for the CS Technical Interview](https://web.stanford.edu/class/cs9/) (Spring 2022) + [problem sets de MIT 6.006](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/pages/assignments/) (solo los temas ya vistos: ordenamiento, hashing, árboles, BFS y DFS) | Los problemas de las sesiones de práctica de CS9 + los problem sets de 6.006 indicados, cronometrados; simulacros de entrevista con otra persona | 60 |
 | Inglés técnico | Lectura de documentación y entrevistas; apuntar a nivel B2 o más | [British Council LearnEnglish](https://learnenglish.britishcouncil.org/) (recursos gratuitos y test de nivel) | Test de nivel de LearnEnglish; leer en inglés la documentación de todo el nivel | Continuo, fuera del total |
 
-**Horas del nivel:** 340 (220 de temas y 120 del portfolio). Con este nivel llegás al hito de empleo: **1110 h acumuladas**.
+**Horas del nivel:** 340 (220 de temas y 120 del portfolio). Con este nivel llegás al hito de empleo: **1180 h acumuladas**.
 
 **Django o FastAPI:** empezá por uno solo. Django si querés backend web completo; FastAPI si apuntás a APIs y servicios de datos o IA.
 
@@ -346,7 +358,7 @@ Todas las fuentes son gratuitas salvo las indicadas como pagas. La licencia impo
 | UC Irvine | Tesis de Roy Fielding (REST) | 2000, texto canónico | Lectura libre online |
 | IETF | RFCs de HTTP, QUIC, TLS, OAuth, JWT y errores en APIs | Vigentes; OAuth 2.1 aún en borrador | Uso libre |
 | OWASP Foundation | Top 10:2025, ASVS, Cheat Sheet Series | Top 10 edición 2025 | Creative Commons BY-SA |
-| Linux Foundation y CNCF | OpenAPI 3.2, OCI, Kubernetes, gRPC, GraphQL, certificación CKA | OpenAPI 3.2 | Especificaciones abiertas; certificación paga |
+| Linux Foundation y CNCF | Curso Introduction to Linux, OpenAPI 3.2, OCI, Kubernetes, gRPC, GraphQL, certificación CKA | OpenAPI 3.2 | Especificaciones abiertas; certificación paga |
 | Apache Software Foundation | Kafka, Airflow 3 | Vigentes | Apache License 2.0 (permisiva) |
 | Proyecto Git | Pro Git (libro oficial, en español) | 2.ª edición | Creative Commons BY-NC-SA 3.0 |
 | Proyecto Rust | The Rust Programming Language, Rust by Example, The Rustonomicon, Rustlings | Vigentes | MIT o Apache 2.0 (permisivas) |
@@ -354,7 +366,7 @@ Todas las fuentes son gratuitas salvo las indicadas como pagas. La licencia impo
 | Google | Libros de SRE | Vigentes | Lectura gratuita online |
 | PostgreSQL Global Development Group | Documentación de PostgreSQL | PostgreSQL 18 | PostgreSQL License (permisiva) |
 | Django Software Foundation | Documentación de Django y DEPs | Django 6.1 | BSD (permisiva) |
-| Proyectos oficiales | Documentación de pytest, mypy, Pyright, Ruff, uv, psycopg 3, FastAPI, Pydantic, ASGI, pandas 3.0, NumPy, Matplotlib, scikit-learn, PyTorch, Redis, Celery, RabbitMQ, Ansible, Docker, Terraform, GitHub Actions, PyO3, maturin, Let's Encrypt, OpenID Connect y Linux man-pages | Verificadas el 11/10/2026 | Revisar en cada sitio |
+| Proyectos oficiales | Documentación de pytest, mypy, Pyright, Ruff, uv, psycopg 3, FastAPI, Pydantic, ASGI, pandas 3.0, NumPy, Matplotlib, scikit-learn, PyTorch, Redis, Celery, RabbitMQ, Ansible, Docker, Terraform, GitHub Actions, PyO3, maturin, Let's Encrypt, OpenID Connect, Linux man-pages, el manual de GNU Bash, WSL y la especificación POSIX del shell (The Open Group) | Verificadas el 11/10/2026 | Revisar en cada sitio |
 | Exercism (organización sin fines de lucro) | Track de Python | Vigente | Plataforma gratuita; revisar la licencia de los ejercicios en su repositorio |
 | Mozilla y British Council | MDN Web Docs, LearnEnglish | Vigentes | MDN: Creative Commons BY-SA; LearnEnglish: recursos gratuitos, cursos pagos aparte |
 
