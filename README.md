@@ -20,6 +20,17 @@ Para marcar tu avance tema por tema: [TRACKER.md](TRACKER.md)
 
 Si querés especializarte como AI Engineer con un plan más corto: [plan-ia/](plan-ia/)
 
+### App para el celular
+
+El Plan IA y el mapa completo también vienen como app de Android, con las fases, los niveles y las casillas para tildar lo que vas terminando.
+
+- **Descarga:** [mapa-python.apk](https://github.com/kiamchomi-hash/mapa-python/releases/download/app/mapa-python.apk)
+- **Instalación:** abrí el enlace desde el celular, descargá el APK y abrilo. La primera vez Android te pide permiso para instalar apps desde el navegador (o desde "orígenes desconocidos"); dalo y confirmá la instalación.
+- **Tu avance:** queda guardado en el celular, no se sube a ningún lado. Si desinstalás la app, se borra.
+- **Actualizaciones:** cada push a `main` vuelve a armar el APK con el contenido más reciente. Para actualizar, descargalo de nuevo e instalalo encima; el avance se mantiene.
+
+En la computadora está la misma app como artifact de claude.ai ([abrir](https://claude.ai/artifact/LgMnTf56YBsuNTrb4pdrFQ); es privado, solo lo ve quien lo creó), que sincroniza el avance con tu cuenta. En Linux también hay un lanzador en el menú de aplicaciones y en el escritorio, llamado Mapa Python.
+
 **Contenido:**
 
 - [Orden recomendado](#orden-recomendado)
