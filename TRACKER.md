@@ -1,6 +1,6 @@
 # Tracker de avance
 
-Marcá cada casilla solo cuando puedas resolver los ejercicios del tema sin mirar la teoría y tengas su proyecto en la carpeta `proyecto/`. Las secciones siguen el orden recomendado del [README](README.md#orden-recomendado); los tracks paralelos se van marcando al mismo tiempo que las etapas.
+Marcá cada casilla solo cuando puedas resolver los ejercicios del tema (columna "Ejercicios" del README) sin mirar la teoría y tengas su proyecto en la carpeta `proyecto/`. Las secciones siguen el orden recomendado del [README](README.md#orden-recomendado); los tracks paralelos se van marcando al mismo tiempo que las etapas.
 
 Para marcar una casilla, editá este archivo y cambiá `- [ ]` por `- [x]`.
 
@@ -19,10 +19,10 @@ Para marcar una casilla, editá este archivo y cambiá `- [ ]` por `- [x]`.
 
 ## Etapa 2 – Programador sólido
 
-- [ ] Nivel 6 – Pensamiento algorítmico: recursión, ordenamiento, Big O
+- [ ] Nivel 6 – Estructuras de datos y pensamiento algorítmico: pilas, colas, listas enlazadas, árboles, tablas hash, heaps, recursión, ordenamiento, Big O
 - [ ] Nivel 7 – Programación orientada a objetos
-- [ ] Nivel 8 – Organización: módulos, paquetes, empaquetado
-- [ ] Nivel 9 – Calidad: PEP 8, testing, debugging, Git a fondo (Pro Git)
+- [ ] Nivel 8 – Organización y herramientas modernas: módulos, paquetes, `pyproject.toml`, `uv`, paquete publicado en TestPyPI
+- [ ] Nivel 9 – Calidad: PEP 8, `ruff`, testing con pytest, debugging, Git a fondo (Pro Git)
 - [ ] Nivel 10 – Diseño de software (MIT 6.102)
 
 ## Especialización Web (nivel 13, adelantada)
@@ -41,6 +41,7 @@ Requisito: Etapa 1, Etapa 2, CS61A y la especialización Web.
 - [ ] pandas: getting started completo
 - [ ] Docker: guía oficial
 - [ ] Seguridad mínima para publicar: OWASP Top 10:2025
+- [ ] Entrevistas técnicas: Stanford CS9 y problem sets de MIT 6.006, con simulacros
 - [ ] Inglés técnico: nivel B2 confirmado con el test de LearnEnglish
 - [ ] Portfolio
   - [ ] API con FastAPI, PostgreSQL y Docker, con tests
@@ -50,7 +51,7 @@ Requisito: Etapa 1, Etapa 2, CS61A y la especialización Web.
 ## Etapa 3 – Python avanzado
 
 - [ ] Nivel 11 – Python idiomático: generadores, decoradores, context managers
-- [ ] Nivel 12 – Avanzado: type hints, concurrencia, `asyncio`, profiling
+- [ ] Nivel 12 – Avanzado: type hints con mypy o Pyright en modo estricto, concurrencia, `asyncio`, profiling
 - [ ] Nivel 13 – Especializaciones (ver "Especializaciones del nivel 13")
 
 ## Track paralelo de matemáticas
@@ -73,7 +74,7 @@ Requisito: Etapa 1, Etapa 2, CS61A y la especialización Web.
 - [ ] C fundamentos (Harvard CS50x y el libro Modern C)
 - [ ] C y la máquina (CMU 15-213)
 - [ ] Extensiones de Python en C
-- [ ] Rust fundamentos (libro oficial y Rust by Example)
+- [ ] Rust fundamentos (libro oficial, Rust by Example y Rustlings)
 - [ ] Rust en sistemas (Stanford CS110L)
 - [ ] Rust experto y extensiones con PyO3
 - [ ] Proyecto: el mismo módulo en Python, C y Rust, con mediciones

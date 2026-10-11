@@ -7,7 +7,7 @@ Actualizado: 11 de octubre de 2026
 El camino tiene 4 etapas en secuencia (niveles 0 a 13 y bloques A a D), un nivel 14 orientado al empleo, un track de experto en backend, infraestructura y cloud, y 2 tracks paralelos (matemáticas y sistemas) que se estudian al mismo tiempo desde la Etapa 3. Todas las fuentes son de universidades, de fundaciones y organismos de estándares (PSF, IETF, OWASP, CNCF) o la documentación oficial de cada tecnología, y se verificaron el 11 de octubre de 2026.
 
 - **Versión de referencia:** Python 3.15, la última estable ([What's New in 3.15](https://docs.python.org/3/whatsnew/3.15.html)).
-- **Regla de avance:** no pasar de nivel hasta resolver los ejercicios del nivel sin mirar la teoría.
+- **Regla de avance:** no pasar de nivel hasta resolver los ejercicios del nivel sin mirar la teoría. Cada tabla tiene una columna de ejercicios con la fuente de práctica de cada nivel.
 - **Estructura de carpetas:** una carpeta por nivel, cada una con `teoria/`, `ejercicios/` y `proyecto/`.
 - **Proporción sugerida:** 30% leer o ver clases, 70% escribir código.
 
@@ -30,58 +30,59 @@ Las secciones de este documento siguen este orden; los tracks paralelos aparecen
 
 Al terminar esta etapa podés escribir scripts completos que leen datos, los procesan y manejan errores.
 
-| Nivel | Temas | Fuente principal |
-| --- | --- | --- |
-| 0. Preparación | Instalación, terminal, intérprete, editor, `venv`, `pip`, Git básico (`init`, `add`, `commit`, `log`, `diff`) | [Tutorial oficial en español](https://docs.python.org/es/3/tutorial/) + [Python Packaging User Guide](https://packaging.python.org/) + [MIT Missing Semester](https://missing.csail.mit.edu/2026/) (edición 2026: clases de shell y de [control de versiones con Git](https://missing.csail.mit.edu/2026/version-control/)) |
-| 1. Primeros pasos | Variables, tipos, operadores, `input`/`print`, f-strings | [Harvard CS50P](https://cs50.harvard.edu/python/) (semanas 0–1) |
-| 2. Control de flujo | `if`/`elif`, `while`, `for`, `break`/`continue`, `match` | CS50P + [MOOC de Helsinki 2026](https://programming-26.mooc.fi/) (partes 1–2) |
-| 3. Funciones | Parámetros, retorno, scope, argumentos por defecto y nombrados | MOOC de Helsinki (partes 2–3) |
-| 4. Colecciones | Listas, tuplas, diccionarios, conjuntos, strings a fondo | MOOC de Helsinki (partes 4–5) |
-| 5. Errores y archivos | Excepciones, archivos, CSV, JSON, expresiones regulares (`re`), `logging` | CS50P (semanas 3, 6 y 7) + [Regular Expression HOWTO](https://docs.python.org/3/howto/regex.html) + [Logging HOWTO](https://docs.python.org/3/howto/logging.html) |
+| Nivel | Temas | Fuente principal | Ejercicios |
+| --- | --- | --- | --- |
+| 0. Preparación | Instalación, terminal, intérprete, editor, `venv`, `pip`, Git básico (`init`, `add`, `commit`, `log`, `diff`) | [Tutorial oficial en español](https://docs.python.org/es/3/tutorial/) + [Python Packaging User Guide](https://packaging.python.org/) + [MIT Missing Semester](https://missing.csail.mit.edu/2026/) (edición 2026: clases de shell y de [control de versiones con Git](https://missing.csail.mit.edu/2026/version-control/)) | Ejercicios de las clases [Course Overview + Introduction to the Shell](https://missing.csail.mit.edu/2026/course-shell/) y Version Control and Git de Missing Semester; crear el repositorio del plan y hacer los primeros commits |
+| 1. Primeros pasos | Variables, tipos, operadores, `input`/`print`, f-strings | [Harvard CS50P](https://cs50.harvard.edu/python/) (semanas 0–1) | [problem sets de CS50P](https://cs50.harvard.edu/python/psets/): Problem Set 0 |
+| 2. Control de flujo | `if`/`elif`, `while`, `for`, `break`/`continue`, `match` | CS50P + [MOOC de Helsinki 2026](https://programming-26.mooc.fi/) (partes 1–2) | CS50P: Problem Sets 1 y 2 + ejercicios de las partes 1–2 del MOOC de Helsinki |
+| 3. Funciones | Parámetros, retorno, scope, argumentos por defecto y nombrados | MOOC de Helsinki (partes 2–3) | Ejercicios de las partes 2–3 del MOOC de Helsinki + labs y homework de CS61A sobre funciones |
+| 4. Colecciones | Listas, tuplas, diccionarios, conjuntos, strings a fondo | MOOC de Helsinki (partes 4–5) | Ejercicios de las partes 4–5 del MOOC de Helsinki + ejercicios de listas, diccionarios, conjuntos y strings de [Exercism, track de Python](https://exercism.org/tracks/python) |
+| 5. Errores y archivos | Excepciones, archivos, CSV, JSON, expresiones regulares (`re`), `logging` | CS50P (semanas 3, 6 y 7) + [Regular Expression HOWTO](https://docs.python.org/3/howto/regex.html) + [Logging HOWTO](https://docs.python.org/3/howto/logging.html) | CS50P: Problem Sets 3, 6 y 7 |
 
 ## Complemento de ciencias de la computación (en paralelo con los niveles 3–7)
 
 Berkeley CS61A es el primer curso de la carrera de computación de Berkeley y está pensado para estudiantes que recién aprenden a programar. Se cursa en paralelo con los niveles 3 a 7: refuerza funciones, recursión y objetos con el enfoque de un curso universitario, y agrega abstracción, funciones de orden superior, listas enlazadas, árboles, iteradores, generadores y la construcción de un intérprete.
 
-| Qué dominar | Fuente principal |
-| --- | --- |
-| Abstracción, funciones de orden superior, recursión, listas enlazadas, árboles, objetos, iteradores, generadores, construir un intérprete | [Berkeley CS61A](https://cs61a.org/) + su libro [Composing Programs](https://www.composingprograms.com/) |
+| Qué dominar | Fuente principal | Ejercicios |
+| --- | --- | --- |
+| Abstracción, funciones de orden superior, recursión, listas enlazadas, árboles, objetos, iteradores, generadores, construir un intérprete | [Berkeley CS61A](https://cs61a.org/) + su libro [Composing Programs](https://www.composingprograms.com/) | Todos los labs, homework y proyectos del curso (incluido el intérprete de Scheme) |
 
 ## Etapa 2 – Programador sólido (niveles 6–10)
 
 Al terminar esta etapa podés construir proyectos medianos, probados, versionados y legibles por otros.
 
-| Nivel | Temas | Fuente principal |
-| --- | --- | --- |
-| 6. Pensamiento algorítmico | Recursión, búsqueda, ordenamiento, complejidad (Big O) | [MIT 6.100L](https://ocw.mit.edu/courses/6-100l-introduction-to-cs-and-programming-using-python-fall-2022/) (Fall 2022, OCW) |
-| 7. Programación orientada a objetos | Clases, herencia, composición, métodos especiales | MIT 6.100L (segunda mitad) + CS50P (semana 8) |
-| 8. Organización del código | Módulos, paquetes, biblioteca estándar, empaquetar y publicar tu propio paquete | [Tutorial oficial: módulos](https://docs.python.org/es/3/tutorial/modules.html) + [Packaging User Guide](https://packaging.python.org/) |
-| 9. Calidad | PEP 8, docstrings (PEP 257), testing con `unittest` y pytest, debugging con `pdb`, Git a fondo (ramas, merge, rebase, flujo con pull requests) | [PEP 8](https://peps.python.org/pep-0008/) + [MIT Missing Semester](https://missing.csail.mit.edu/2026/) (edición 2026) + [Pro Git](https://git-scm.com/book/es/v2) (libro oficial de Git, en español) |
-| 10. Diseño de software | Especificaciones, tipos abstractos, invariantes, código mantenible, patrones de diseño | [MIT 6.102 Software Construction](https://web.mit.edu/6.102/www/sp26/) (Spring 2026, en TypeScript; los conceptos aplican a Python) |
+| Nivel | Temas | Fuente principal | Ejercicios |
+| --- | --- | --- | --- |
+| 6. Estructuras de datos y pensamiento algorítmico | Estructuras de datos: pilas, colas, listas enlazadas, árboles, tablas hash y heaps (cómo funcionan por dentro y cuándo usar `list`, `collections.deque`, `dict`, `set` y `heapq`); recursión, búsqueda, ordenamiento, complejidad (Big O) | [MIT 6.100L](https://ocw.mit.edu/courses/6-100l-introduction-to-cs-and-programming-using-python-fall-2022/) (Fall 2022, OCW) + [Tutorial oficial: estructuras de datos](https://docs.python.org/es/3/tutorial/datastructures.html) + documentación de [`collections`](https://docs.python.org/3/library/collections.html) y [`heapq`](https://docs.python.org/3/library/heapq.html) + CS61A (listas enlazadas y árboles) | [problem sets de MIT 6.100L](https://ocw.mit.edu/courses/6-100l-introduction-to-cs-and-programming-using-python-fall-2022/lists/problem-sets/) y finger exercises + homework de CS61A sobre listas enlazadas y árboles + implementar desde cero, con tests, una pila, una cola, una lista enlazada, un árbol binario de búsqueda, una tabla hash y un heap |
+| 7. Programación orientada a objetos | Clases, herencia, composición, métodos especiales | MIT 6.100L (segunda mitad) + CS50P (semana 8) | Problem sets de la segunda mitad de MIT 6.100L + CS50P: Problem Set 8 |
+| 8. Organización del código y herramientas modernas | Módulos, paquetes, biblioteca estándar, configuración del proyecto con `pyproject.toml`, entornos y dependencias con `uv` (además de `venv` y `pip`), empaquetar y publicar tu propio paquete | [Tutorial oficial: módulos](https://docs.python.org/es/3/tutorial/modules.html) + [Packaging User Guide: Writing your pyproject.toml](https://packaging.python.org/en/latest/guides/writing-pyproject-toml/) + [documentación de uv](https://docs.astral.sh/uv/) (Astral) + clase [Packaging and Shipping Code](https://missing.csail.mit.edu/2026/shipping-code/) de Missing Semester | CS50P: Problem Set 4 (bibliotecas) + ejercicios de Packaging and Shipping Code + publicar tu propio paquete en TestPyPI con `pyproject.toml` y `uv`, siguiendo el tutorial [Packaging Python Projects](https://packaging.python.org/en/latest/tutorials/packaging-projects/) |
+| 9. Calidad | PEP 8, docstrings (PEP 257), linting y formato automático con `ruff`, testing con `unittest` y pytest, debugging con `pdb`, Git a fondo (ramas, merge, rebase, flujo con pull requests) | [PEP 8](https://peps.python.org/pep-0008/) + [documentación de Ruff](https://docs.astral.sh/ruff/) (Astral) + [documentación de pytest](https://docs.pytest.org/) + [MIT Missing Semester](https://missing.csail.mit.edu/2026/) (edición 2026) + [Pro Git](https://git-scm.com/book/es/v2) (libro oficial de Git, en español) | CS50P: Problem Set 5 (unit tests) + ejercicios de las clases Version Control and Git, Debugging and Profiling y [Code Quality](https://missing.csail.mit.edu/2026/code-quality/) de Missing Semester + configurar `ruff` y pytest en un proyecto propio |
+| 10. Diseño de software | Especificaciones, tipos abstractos, invariantes, código mantenible, patrones de diseño | [MIT 6.102 Software Construction](https://web.mit.edu/6.102/www/sp26/) (Spring 2026, en TypeScript; los conceptos aplican a Python) | Problem sets de MIT 6.102 (en TypeScript); después, rehacer uno en Python con type hints |
 
 ## Especialización Web (nivel 13, adelantada)
 
 Es la primera de las cuatro especializaciones del nivel 13 y la única que se cursa antes de la Etapa 3, porque el nivel 14 se apoya en ella. Harvard CS50W es el curso integrador del camino al empleo: Python web con Django, SQL, migraciones, APIs, JavaScript, testing, CI/CD, seguridad y proyecto final.
 
-| Qué dominar | Fuentes oficiales |
-| --- | --- |
-| Backend completo, APIs, y lo básico de HTML, CSS y JavaScript para entender el frontend | [Harvard CS50W](https://cs50.harvard.edu/web/) (Web Programming with Python and JavaScript) + [MDN Web Docs](https://developer.mozilla.org/es/docs/Learn_web_development) |
+| Qué dominar | Fuentes oficiales | Ejercicios |
+| --- | --- | --- |
+| Backend completo, APIs, y lo básico de HTML, CSS y JavaScript para entender el frontend | [Harvard CS50W](https://cs50.harvard.edu/web/) (Web Programming with Python and JavaScript) + [MDN Web Docs](https://developer.mozilla.org/es/docs/Learn_web_development) | Los [proyectos de CS50W](https://cs50.harvard.edu/web/projects/), incluido el proyecto final |
 
 ## Nivel 14 – Listo para trabajar
 
 Es la capa práctica que piden los avisos de empleo. Requiere solo la Etapa 1, la Etapa 2 (con CS61A) y la especialización Web; no depende de la Etapa 3, de las matemáticas ni de la IA. Al terminarlo ya podés postularte a puestos junior, y el resto del mapa se sigue estudiando mientras trabajás.
 
-| Tema | Qué aprender | Fuente oficial |
-| --- | --- | --- |
-| PostgreSQL | Crear tablas, consultas, joins, agregaciones, vistas, claves foráneas, transacciones, funciones de ventana | [Tutorial oficial de PostgreSQL 18](https://www.postgresql.org/docs/current/tutorial.html); después, la Parte II (The SQL Language) |
-| PostgreSQL desde Python | Conexiones, consultas parametrizadas (evitan la inyección SQL), transacciones | [Documentación de psycopg 3](https://www.psycopg.org/psycopg3/docs/) |
-| Backend con Django | Modelos, ORM, migraciones, vistas, plantillas, panel de administración | [Tutorial oficial de Django 6.1](https://docs.djangoproject.com/en/stable/intro/tutorial01/) (requiere Python 3.12 o superior) |
-| APIs con FastAPI | Rutas, validación de datos, dependencias, autenticación OAuth2 y JWT, testing | [Tutorial oficial de FastAPI](https://fastapi.tiangolo.com/tutorial/) |
-| HTTP y APIs REST | Métodos, códigos de estado, headers, cookies, diseño REST | [MDN Web Docs: HTTP](https://developer.mozilla.org/es/docs/Web/HTTP) (Mozilla) |
-| Datos con pandas | DataFrames, lectura de archivos, filtros, joins, agregaciones, series temporales | [Getting started de pandas 3.0](https://pandas.pydata.org/docs/getting_started/index.html) |
-| Docker | Contenedores, imágenes, Dockerfile, Docker Compose, persistencia de datos | [Guía oficial de Docker](https://docs.docker.com/get-started/) |
-| Seguridad mínima para publicar | Las vulnerabilidades web más comunes y cómo evitarlas antes de poner una aplicación online | [OWASP Top 10:2025](https://owasp.org/Top10/2025/es/) (en español); se profundiza en el track de experto |
-| Inglés técnico | Lectura de documentación y entrevistas; apuntar a nivel B2 o más | [British Council LearnEnglish](https://learnenglish.britishcouncil.org/) (recursos gratuitos y test de nivel) |
+| Tema | Qué aprender | Fuente oficial | Ejercicios o práctica |
+| --- | --- | --- | --- |
+| PostgreSQL | Crear tablas, consultas, joins, agregaciones, vistas, claves foráneas, transacciones, funciones de ventana | [Tutorial oficial de PostgreSQL 18](https://www.postgresql.org/docs/current/tutorial.html); después, la Parte II (The SQL Language) | Los ejemplos del tutorial sobre una base propia + 20 consultas escritas por vos sobre los datos del portfolio |
+| PostgreSQL desde Python | Conexiones, consultas parametrizadas (evitan la inyección SQL), transacciones | [Documentación de psycopg 3](https://www.psycopg.org/psycopg3/docs/) | La capa de acceso a datos de la API del portfolio, con tests |
+| Backend con Django | Modelos, ORM, migraciones, vistas, plantillas, panel de administración | [Tutorial oficial de Django 6.1](https://docs.djangoproject.com/en/stable/intro/tutorial01/) (requiere Python 3.12 o superior) | Las 8 partes del tutorial + la aplicación web del portfolio |
+| APIs con FastAPI | Rutas, validación de datos, dependencias, autenticación OAuth2 y JWT, testing | [Tutorial oficial de FastAPI](https://fastapi.tiangolo.com/tutorial/) | El tutorial completo + la API del portfolio |
+| HTTP y APIs REST | Métodos, códigos de estado, headers, cookies, diseño REST | [MDN Web Docs: HTTP](https://developer.mozilla.org/es/docs/Web/HTTP) (Mozilla) | Inspeccionar requests reales con las herramientas de desarrollo del navegador y con `curl` |
+| Datos con pandas | DataFrames, lectura de archivos, filtros, joins, agregaciones, series temporales | [Getting started de pandas 3.0](https://pandas.pydata.org/docs/getting_started/index.html) | El análisis de datos del portfolio |
+| Docker | Contenedores, imágenes, Dockerfile, Docker Compose, persistencia de datos | [Guía oficial de Docker](https://docs.docker.com/get-started/) | Contenerizar la API del portfolio con Docker Compose y PostgreSQL |
+| Seguridad mínima para publicar | Las vulnerabilidades web más comunes y cómo evitarlas antes de poner una aplicación online | [OWASP Top 10:2025](https://owasp.org/Top10/2025/es/) (en español); se profundiza en el track de experto | Revisar los dos proyectos web del portfolio contra el Top 10 |
+| Preparación para entrevistas técnicas | Resolver problemas de algoritmos y estructuras de datos en voz alta y con tiempo limitado, entrevistas conductuales, y diseño de sistemas a nivel junior: explicar y defender la arquitectura de tus proyectos del portfolio | [Stanford CS9 Problem-Solving for the CS Technical Interview](https://web.stanford.edu/class/cs9/) (Spring 2022) + [problem sets de MIT 6.006](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/pages/assignments/) (solo los temas ya vistos: ordenamiento, hashing, árboles, BFS y DFS) | Los problemas de las sesiones de práctica de CS9 + los problem sets de 6.006 indicados, cronometrados; simulacros de entrevista con otra persona |
+| Inglés técnico | Lectura de documentación y entrevistas; apuntar a nivel B2 o más | [British Council LearnEnglish](https://learnenglish.britishcouncil.org/) (recursos gratuitos y test de nivel) | Test de nivel de LearnEnglish; leer en inglés la documentación de todo el nivel |
 
 **Django o FastAPI:** empezá por uno solo. Django si querés backend web completo; FastAPI si apuntás a APIs y servicios de datos o IA.
 
@@ -95,11 +96,11 @@ Es la capa práctica que piden los avisos de empleo. Requiere solo la Etapa 1, l
 
 Al terminar esta etapa escribís Python idiomático, tipado, concurrente y medido, como lo escribe un profesional.
 
-| Nivel | Temas | Fuente principal |
-| --- | --- | --- |
-| 11. Python idiomático | Comprensiones, iteradores, generadores, decoradores, context managers, `itertools`, `functools` | [Functional Programming HOWTO](https://docs.python.org/3/howto/functional.html) + [Tutorial oficial: clases e iteradores](https://docs.python.org/es/3/tutorial/classes.html) |
-| 12. Avanzado | Type hints, dataclasses, concurrencia (`threading`, `multiprocessing`, `asyncio`), rendimiento con `timeit`, `tracemalloc` y el nuevo paquete `profiling` (PEP 799, Python 3.15) | Documentación oficial de [`typing`](https://docs.python.org/3/library/typing.html) y [`asyncio`](https://docs.python.org/3/library/asyncio.html) + [What's New in 3.15](https://docs.python.org/3/whatsnew/3.15.html) |
-| 13. Especialización | Cursar más de un dominio: web (ya cursada antes del nivel 14), automatización, datos e IA, una por vez (ver "Especializaciones del nivel 13") | Ver la sección "Especializaciones del nivel 13" |
+| Nivel | Temas | Fuente principal | Ejercicios |
+| --- | --- | --- | --- |
+| 11. Python idiomático | Comprensiones, iteradores, generadores, decoradores, context managers, `itertools`, `functools` | [Functional Programming HOWTO](https://docs.python.org/3/howto/functional.html) + [Tutorial oficial: clases e iteradores](https://docs.python.org/es/3/tutorial/classes.html) | Labs y homework de CS61A sobre iteradores y generadores, rehechos sin mirar + ejercicios de generadores, decoradores y desempaquetado de [Exercism, track de Python](https://exercism.org/tracks/python) |
+| 12. Avanzado | Type hints y chequeo estático con mypy o Pyright, dataclasses, concurrencia (`threading`, `multiprocessing`, `asyncio`), rendimiento con `timeit`, `tracemalloc` y el nuevo paquete `profiling` (PEP 799, Python 3.15) | Documentación oficial de [`typing`](https://docs.python.org/3/library/typing.html) y [`asyncio`](https://docs.python.org/3/library/asyncio.html) + [documentación de mypy](https://mypy.readthedocs.io/en/stable/) o de [Pyright](https://microsoft.github.io/pyright/) + [What's New in 3.15](https://docs.python.org/3/whatsnew/3.15.html) | Pasar mypy en modo `--strict` (o Pyright en modo estricto) sobre los proyectos de los niveles 8–10; reescribir un descargador secuencial con `threading`, `multiprocessing` y `asyncio`, y comparar las tres versiones con `timeit` y `profiling`; ejercicios de clases y dataclasses de Exercism |
+| 13. Especialización | Cursar más de un dominio: web (ya cursada antes del nivel 14), automatización, datos e IA, una por vez (ver "Especializaciones del nivel 13") | Ver la sección "Especializaciones del nivel 13" | Los de cada especialización (ver "Especializaciones del nivel 13") |
 
 Novedades de Python 3.15 que conviene conocer en esta etapa: imports perezosos con `lazy import` (PEP 810), UTF-8 como codificación por defecto (PEP 686) y el tipo inmutable `frozendict` (PEP 814).
 
@@ -107,37 +108,37 @@ Novedades de Python 3.15 que conviene conocer en esta etapa: imports perezosos c
 
 Se estudia en paralelo desde la Etapa 3, después del hito de empleo; sin él, el bloque A, la especialización de datos y el camino a IA se traban.
 
-| Orden | Materia | Cuándo empezar | Fuente |
-| --- | --- | --- | --- |
-| 1 | Matemática discreta (lógica, demostraciones, grafos, conteo) | Con el nivel 11 | [MIT 6.1200J Mathematics for Computer Science](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/) (Spring 2024; antes se llamaba 6.042J) |
-| 2 | Cálculo de una variable | Con el nivel 12 | [MIT 18.01SC Single Variable Calculus](https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/) |
-| 3 | Álgebra lineal | Después de 18.01SC | [MIT 18.06SC Linear Algebra](https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/) (Gilbert Strang) |
-| 4 | Probabilidad | Antes de la especialización de datos | [Harvard Stat 110](https://stat110.hsites.harvard.edu/) (Joe Blitzstein) |
-| 5 | Cálculo multivariable (gradientes) | Antes de la especialización de IA | [MIT 18.02SC Multivariable Calculus](https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/) |
+| Orden | Materia | Cuándo empezar | Fuente | Ejercicios |
+| --- | --- | --- | --- | --- |
+| 1 | Matemática discreta (lógica, demostraciones, grafos, conteo) | Con el nivel 11 | [MIT 6.1200J Mathematics for Computer Science](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/) (Spring 2024; antes se llamaba 6.042J) | Problem sets del curso (OCW) |
+| 2 | Cálculo de una variable | Con el nivel 12 | [MIT 18.01SC Single Variable Calculus](https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/) | Problem sets y exámenes del curso (formato OCW Scholar) |
+| 3 | Álgebra lineal | Después de 18.01SC | [MIT 18.06SC Linear Algebra](https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/) (Gilbert Strang) | Problem sets y exámenes del curso (formato OCW Scholar) |
+| 4 | Probabilidad | Antes de la especialización de datos | [Harvard Stat 110](https://stat110.hsites.harvard.edu/) (Joe Blitzstein) | Strategic practice y homework del curso |
+| 5 | Cálculo multivariable (gradientes) | Antes de la especialización de IA | [MIT 18.02SC Multivariable Calculus](https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/) | Problem sets y exámenes del curso (formato OCW Scholar) |
 
 ## Track paralelo de sistemas
 
 Se estudia en paralelo desde la Etapa 3. Es lo que convierte a un programador de Python en alguien que entiende la máquina, la red y los datos sobre los que corre su código.
 
-| Orden | Materia | Cuándo empezar | Fuente |
-| --- | --- | --- | --- |
-| 1 | Bases de datos: teoría (modelado, índices, transacciones, cómo funciona un motor por dentro) | Con el nivel 11; la práctica con PostgreSQL ya se hizo en el nivel 14 | [CMU 15-445 Database Systems](https://15445.courses.cs.cmu.edu/) (Fall 2026) + [documentación de `sqlite3`](https://docs.python.org/3/library/sqlite3.html) + [documentación de PostgreSQL 18](https://www.postgresql.org/docs/current/) |
-| 2 | Sistemas operativos: procesos, hilos, memoria virtual, concurrencia | Con el nivel 12, antes del bloque C | [OSTEP](https://research.cs.wisc.edu/wind/OSTEP/), libro gratuito de la Universidad de Wisconsin; más profundo: [MIT 6.1810](https://pdos.csail.mit.edu/6.1810/) (en C) |
-| 3 | Redes: TCP/IP, HTTP, sockets | Con el nivel 13 | [Stanford CS144](https://cs144.github.io/) (Fall 2026) + [documentación de `socket`](https://docs.python.org/3/library/socket.html) |
-| 4 | Seguridad: vulnerabilidades, aislamiento, criptografía aplicada | Después del nivel 14; el mínimo para publicar ya está en ese nivel | [MIT 6.5660 Computer Systems Security](https://ocw.mit.edu/courses/6-5660-computer-systems-security-spring-2024/) (Spring 2024) + [Security Considerations de Python](https://docs.python.org/3/library/security_warnings.html) |
+| Orden | Materia | Cuándo empezar | Fuente | Ejercicios |
+| --- | --- | --- | --- | --- |
+| 1 | Bases de datos: teoría (modelado, índices, transacciones, cómo funciona un motor por dentro) | Con el nivel 11; la práctica con PostgreSQL ya se hizo en el nivel 14 | [CMU 15-445 Database Systems](https://15445.courses.cs.cmu.edu/) (Fall 2026) + [documentación de `sqlite3`](https://docs.python.org/3/library/sqlite3.html) + [documentación de PostgreSQL 18](https://www.postgresql.org/docs/current/) | Proyectos de programación del curso |
+| 2 | Sistemas operativos: procesos, hilos, memoria virtual, concurrencia | Con el nivel 12, antes del bloque C | [OSTEP](https://research.cs.wisc.edu/wind/OSTEP/), libro gratuito de la Universidad de Wisconsin; más profundo: [MIT 6.1810](https://pdos.csail.mit.edu/6.1810/) (en C) | Homework de cada capítulo de OSTEP (simuladores y código); con 6.1810, sus labs |
+| 3 | Redes: TCP/IP, HTTP, sockets | Con el nivel 13 | [Stanford CS144](https://cs144.github.io/) (Fall 2026) + [documentación de `socket`](https://docs.python.org/3/library/socket.html) | Labs del curso |
+| 4 | Seguridad: vulnerabilidades, aislamiento, criptografía aplicada | Después del nivel 14; el mínimo para publicar ya está en ese nivel | [MIT 6.5660 Computer Systems Security](https://ocw.mit.edu/courses/6-5660-computer-systems-security-spring-2024/) (Spring 2024) + [Security Considerations de Python](https://docs.python.org/3/library/security_warnings.html) | Labs del curso |
 
 ## Lenguajes de sistemas: C y Rust
 
 C es el lenguaje en el que está escrito CPython; Rust es el lenguaje con el que hoy se construyen muchas herramientas del ecosistema Python, como el núcleo de Pydantic. Dominar los dos te permite leer el intérprete y escribir extensiones rápidas para Python.
 
-| Orden | Qué dominar | Cuándo empezar | Fuente oficial |
-| --- | --- | --- | --- |
-| 1. C fundamentos | Tipos, punteros, arrays, strings, memoria dinámica, compilación | Con el nivel 11 | [Harvard CS50x](https://cs50.harvard.edu/x/) (semanas en C) + el libro [Modern C, 3.ª edición](https://www.manning.com/books/modern-c-third-edition) de Jens Gustedt, investigador del Inria (pago), para C moderno a fondo |
-| 2. C y la máquina | Representación de datos, ensamblador x86-64, jerarquía de memoria y caché, enlazado, procesos, memoria virtual, concurrencia | Con el track de sistemas operativos, antes del bloque C | [CMU 15-213 Introduction to Computer Systems](https://www.cs.cmu.edu/~213/) (Spring 2026) + su libro [CS:APP](https://csapp.cs.cmu.edu/) |
-| 3. C aplicado a Python | Escribir extensiones de Python en C con la C API | Durante el bloque C | [Extending and Embedding the Python Interpreter](https://docs.python.org/3/extending/index.html) + [Python/C API Reference](https://docs.python.org/3/c-api/index.html) |
-| 4. Rust fundamentos | Ownership, préstamos (borrowing), lifetimes, traits, manejo de errores, Cargo | Después de CMU 15-213 | [The Rust Programming Language](https://doc.rust-lang.org/book/) (libro oficial) + [Rust by Example](https://doc.rust-lang.org/rust-by-example/) |
-| 5. Rust en sistemas | Por qué Rust evita los errores de memoria de C, concurrencia segura | Después del libro oficial | [Stanford CS110L Safety in Systems Programming](https://web.stanford.edu/class/cs110l/) |
-| 6. Rust experto y Python | Código `unsafe`, modelo de memoria; extensiones de Python escritas en Rust | Al final del bloque C | [The Rustonomicon](https://doc.rust-lang.org/nomicon/) + [guía de PyO3](https://pyo3.rs/) + [documentación de maturin](https://www.maturin.rs/) |
+| Orden | Qué dominar | Cuándo empezar | Fuente oficial | Ejercicios |
+| --- | --- | --- | --- | --- |
+| 1. C fundamentos | Tipos, punteros, arrays, strings, memoria dinámica, compilación | Con el nivel 11 | [Harvard CS50x](https://cs50.harvard.edu/x/) (semanas en C) + el libro [Modern C, 3.ª edición](https://www.manning.com/books/modern-c-third-edition) de Jens Gustedt, investigador del Inria (pago), para C moderno a fondo | [Problem sets de CS50x](https://cs50.harvard.edu/x/psets/) en C |
+| 2. C y la máquina | Representación de datos, ensamblador x86-64, jerarquía de memoria y caché, enlazado, procesos, memoria virtual, concurrencia | Con el track de sistemas operativos, antes del bloque C | [CMU 15-213 Introduction to Computer Systems](https://www.cs.cmu.edu/~213/) (Spring 2026) + su libro [CS:APP](https://csapp.cs.cmu.edu/) | Labs del curso |
+| 3. C aplicado a Python | Escribir extensiones de Python en C con la C API | Durante el bloque C | [Extending and Embedding the Python Interpreter](https://docs.python.org/3/extending/index.html) + [Python/C API Reference](https://docs.python.org/3/c-api/index.html) | Escribir en C una extensión con al menos una función y un tipo propio, con tests en Python |
+| 4. Rust fundamentos | Ownership, préstamos (borrowing), lifetimes, traits, manejo de errores, Cargo | Después de CMU 15-213 | [The Rust Programming Language](https://doc.rust-lang.org/book/) (libro oficial) + [Rust by Example](https://doc.rust-lang.org/rust-by-example/) | [Rustlings](https://rustlings.rust-lang.org/) (ejercicios oficiales del proyecto Rust) + los ejemplos de Rust by Example |
+| 5. Rust en sistemas | Por qué Rust evita los errores de memoria de C, concurrencia segura | Después del libro oficial | [Stanford CS110L Safety in Systems Programming](https://web.stanford.edu/class/cs110l/) | Assignments del curso |
+| 6. Rust experto y Python | Código `unsafe`, modelo de memoria; extensiones de Python escritas en Rust | Al final del bloque C | [The Rustonomicon](https://doc.rust-lang.org/nomicon/) + [guía de PyO3](https://pyo3.rs/) + [documentación de maturin](https://www.maturin.rs/) | El proyecto de esta sección |
 
 Proyecto que lo demuestra: el mismo módulo lento de Python reescrito como extensión en C y en Rust, con mediciones de rendimiento de las tres versiones.
 
@@ -145,18 +146,20 @@ Proyecto que lo demuestra: el mismo módulo lento de Python reescrito como exten
 
 Se cursan las cuatro, una por vez y en este orden. La web va primero y se adelanta antes del nivel 14; automatización y datos van después de la Etapa 3, y la IA va al final porque necesita el track de matemáticas completo.
 
-| Orden | Especialización | Qué dominar | Fuentes oficiales | Dónde se profundiza en este plan |
-| --- | --- | --- | --- | --- |
-| 1 | Web | Ver la sección "Especialización Web (nivel 13, adelantada)" | Harvard CS50W + MDN Web Docs (detalle en esa sección) | Nivel 14 y todo el track de experto |
-| 2 | Automatización | Scripts de archivos y procesos (`pathlib`, `shutil`, `subprocess`, `argparse`), automatizar navegadores, tareas programadas, automatizar servidores | [Biblioteca estándar de Python](https://docs.python.org/3/library/index.html) + [Playwright para Python](https://playwright.dev/python/) (Microsoft) + [documentación de Ansible](https://docs.ansible.com/) (Red Hat) | Track de experto: Celery para tareas programadas, GitHub Actions y Terraform |
-| 3 | Datos | Análisis con pandas y SQL, visualización, inferencia, pipelines de datos programados | [Berkeley Data 100](https://ds100.org/) (Principles and Techniques of Data Science, edición Fall 2026) + [documentación de Matplotlib](https://matplotlib.org/stable/) + [documentación de Apache Airflow 3](https://airflow.apache.org/docs/) | Track de sistemas (bases de datos), PostgreSQL del nivel 14, Harvard Stat 110 |
-| 4 | IA | Machine learning clásico (regresión, clasificación, evaluación de modelos) antes del deep learning | [Stanford CS229 Machine Learning](https://cs229.stanford.edu/) + [documentación de scikit-learn](https://scikit-learn.org/stable/) | Sección "Camino a IA y proyecto final" |
+| Orden | Especialización | Qué dominar | Fuentes oficiales | Dónde se profundiza en este plan | Ejercicios |
+| --- | --- | --- | --- | --- | --- |
+| 1 | Web | Ver la sección "Especialización Web (nivel 13, adelantada)" | Harvard CS50W + MDN Web Docs (detalle en esa sección) | Nivel 14 y todo el track de experto | Los proyectos de CS50W |
+| 2 | Automatización | Scripts de archivos y procesos (`pathlib`, `shutil`, `subprocess`, `argparse`), automatizar navegadores, tareas programadas, automatizar servidores | [Biblioteca estándar de Python](https://docs.python.org/3/library/index.html) + [Playwright para Python](https://playwright.dev/python/) (Microsoft) + [documentación de Ansible](https://docs.ansible.com/) (Red Hat) | Track de experto: Celery para tareas programadas, GitHub Actions y Terraform | Automatizar tres tareas reales tuyas: un script de archivos con `argparse`, una prueba de navegador con Playwright y un playbook de Ansible sobre una máquina virtual |
+| 3 | Datos | Análisis con pandas y SQL, visualización, inferencia, pipelines de datos programados | [Berkeley Data 100](https://ds100.org/) (Principles and Techniques of Data Science, edición Fall 2026) + [documentación de Matplotlib](https://matplotlib.org/stable/) + [documentación de Apache Airflow 3](https://airflow.apache.org/docs/) | Track de sistemas (bases de datos), PostgreSQL del nivel 14, Harvard Stat 110 | Homework y labs de Data 100 |
+| 4 | IA | Machine learning clásico (regresión, clasificación, evaluación de modelos) antes del deep learning | [Stanford CS229 Machine Learning](https://cs229.stanford.edu/) + [documentación de scikit-learn](https://scikit-learn.org/stable/) | Sección "Camino a IA y proyecto final" | Problem sets de CS229 |
 
 Con las cuatro, tu perfil queda así: experto en Python y backend, con competencia real en datos, automatización e IA.
 
 ## Track de experto: backend, infraestructura y cloud
 
 Este track lleva al nivel experto lo que el nivel 14 deja en introductorio. Empieza después del nivel 14 y corre en paralelo con la Etapa 3 y la Etapa 4; cada área tiene tres escalones, y se considera dominada cuando tenés un proyecto que demuestre el último.
+
+Ejercicios: en cada escalón, el proyecto que lo demuestra; las fuentes universitarias (CS144, CS253, 6.033, 6.5840) traen además sus propios labs y problem sets.
 
 Regla de calidad: en cada área la fuente final es la especificación o el código fuente, no un tutorial. Un experto lee el RFC, el PEP o el código de Django, no un resumen de otro.
 
@@ -246,18 +249,18 @@ Una API en FastAPI o Django con PostgreSQL, caché en Redis, tareas en segundo p
 
 Acá se pasa de usar Python a entender por qué funciona como funciona. La meta final es poder participar en el debate de un PEP o contribuir a CPython.
 
-| Bloque | Temas | Fuente principal |
-| --- | --- | --- |
-| A. Algoritmos formales | Algoritmos y estructuras de datos con análisis formal: hashing, árboles balanceados, heaps, grafos, caminos mínimos, programación dinámica, demostraciones de correctitud y de complejidad | [MIT 6.006](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/) (Spring 2020, en Python) |
-| B. El lenguaje a fondo | Modelo de datos, identidad vs. igualdad, descriptores, `__slots__`, metaclases, sistema de imports | [The Python Language Reference](https://docs.python.org/3/reference/) + [Descriptor HowTo Guide](https://docs.python.org/3/howto/descriptor.html) |
-| C. CPython por dentro | Bytecode (`dis`), conteo de referencias y recolector de basura, el GIL y el build sin GIL (PEP 703), el compilador JIT, la C API | [Python Developer's Guide](https://devguide.python.org/) + [InternalDocs de CPython](https://github.com/python/cpython/tree/main/InternalDocs) + código fuente de CPython |
-| D. Diseño e historia | PEPs clave: 8, 20, 484, 572, 634, 703 y 810; por qué se aceptaron o rechazaron | [peps.python.org](https://peps.python.org/) + [discuss.python.org](https://discuss.python.org/) |
+| Bloque | Temas | Fuente principal | Ejercicios |
+| --- | --- | --- | --- |
+| A. Algoritmos formales | Algoritmos y estructuras de datos con análisis formal: hashing, árboles balanceados, heaps, grafos, caminos mínimos, programación dinámica, demostraciones de correctitud y de complejidad | [MIT 6.006](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/) (Spring 2020, en Python) | Problem sets del curso (los mismos que se empezaron en el nivel 14, ahora completos) |
+| B. El lenguaje a fondo | Modelo de datos, identidad vs. igualdad, descriptores, `__slots__`, metaclases, sistema de imports | [The Python Language Reference](https://docs.python.org/3/reference/) + [Descriptor HowTo Guide](https://docs.python.org/3/howto/descriptor.html) | Reimplementar en Python puro `property`, `classmethod` y `staticmethod` y compararlos con los equivalentes de la Descriptor HowTo Guide; escribir una metaclase de registro de plugins |
+| C. CPython por dentro | Bytecode (`dis`), conteo de referencias y recolector de basura, el GIL y el build sin GIL (PEP 703), el compilador JIT, la C API | [Python Developer's Guide](https://devguide.python.org/) + [InternalDocs de CPython](https://github.com/python/cpython/tree/main/InternalDocs) + código fuente de CPython | Compilar CPython y correr su suite de tests; desensamblar funciones propias con `dis`; resolver un issue marcado para principiantes |
+| D. Diseño e historia | PEPs clave: 8, 20, 484, 572, 634, 703 y 810; por qué se aceptaron o rechazaron | [peps.python.org](https://peps.python.org/) + [discuss.python.org](https://discuss.python.org/) | Escribir un análisis de un PEP aceptado y uno rechazado, con los argumentos de la discusión original |
 
 El bloque A requiere matemática discreta (MIT 6.1200J). El bloque C requiere el track de sistemas operativos: sin procesos, hilos y memoria, el GIL no se entiende de verdad.
 
 ## Camino a IA y proyecto final
 
-El proyecto final es construir un modelo de lenguaje pequeño desde cero; requiere haber terminado la Etapa 3 y el track de matemáticas.
+El proyecto final es construir un modelo de lenguaje pequeño desde cero; requiere haber terminado la Etapa 3 y el track de matemáticas. Ejercicios: los labs de MIT 6.S191, los tutoriales de NumPy y PyTorch reproducidos sin mirar, y los assignments de CS231n, CS224n y CS336.
 
 1. **Cálculo numérico:** arrays, vectorización y broadcasting con NumPy. Fuente: [documentación oficial de NumPy](https://numpy.org/doc/stable/).
 2. **Fundamentos de deep learning:** redes neuronales, retropropagación, entrenamiento. Fuente: [MIT 6.S191 Introduction to Deep Learning](https://introtodeeplearning.com/).
@@ -286,7 +289,7 @@ Todas las fuentes son gratuitas salvo las indicadas como pagas. La licencia impo
 | Universidad de Helsinki | Python Programming MOOC | Edición 2026 | Creative Commons no comercial |
 | MIT | 6.100L, 6.006, 6.1200J, 18.01SC, 18.02SC, 18.06SC, 6.033, 6.5660, 6.1810, 6.5840, 6.102, 6.S191, Missing Semester | Ver año en cada tabla; Missing Semester edición 2026 | OCW: Creative Commons no comercial; el resto, revisar en cada sitio |
 | UC Berkeley | CS61A, Composing Programs, Data 100 | Data 100 Fall 2026 | Composing Programs: Creative Commons BY-SA; Data 100: revisar en el sitio |
-| Stanford | CS110L, CS144, CS229, CS253, CS231n, CS224n, CS336, Cryptography I | CS144 Fall 2026, CS336 Spring 2026 | Revisar en cada sitio |
+| Stanford | CS9, CS110L, CS144, CS229, CS253, CS231n, CS224n, CS336, Cryptography I | CS9 Spring 2022, CS144 Fall 2026, CS336 Spring 2026 | Revisar en cada sitio |
 | Carnegie Mellon | 15-213 Introduction to Computer Systems, 15-445 Database Systems | 15-213 Spring 2026, 15-445 Fall 2026 | Revisar en cada sitio; el libro CS:APP es pago (igual que Modern C, de Jens Gustedt, Inria) |
 | Universidad de Wisconsin | OSTEP | Vigente | Gratuito para leer online |
 | UC Irvine | Tesis de Roy Fielding (REST) | 2000, texto canónico | Lectura libre online |
@@ -295,12 +298,13 @@ Todas las fuentes son gratuitas salvo las indicadas como pagas. La licencia impo
 | Linux Foundation y CNCF | OpenAPI 3.2, OCI, Kubernetes, gRPC, GraphQL, certificación CKA | OpenAPI 3.2 | Especificaciones abiertas; certificación paga |
 | Apache Software Foundation | Kafka, Airflow 3 | Vigentes | Apache License 2.0 (permisiva) |
 | Proyecto Git | Pro Git (libro oficial, en español) | 2.ª edición | Creative Commons BY-NC-SA 3.0 |
-| Proyecto Rust | The Rust Programming Language, Rust by Example, The Rustonomicon | Vigentes | MIT o Apache 2.0 (permisivas) |
+| Proyecto Rust | The Rust Programming Language, Rust by Example, The Rustonomicon, Rustlings | Vigentes | MIT o Apache 2.0 (permisivas) |
 | AWS, Google Cloud, Microsoft | Skill Builder, Well-Architected Framework, Cloud Skills Boost, Microsoft Learn, Playwright | Vigentes | Formación gratuita; certificaciones pagas |
 | Google | Libros de SRE | Vigentes | Lectura gratuita online |
 | PostgreSQL Global Development Group | Documentación de PostgreSQL | PostgreSQL 18 | PostgreSQL License (permisiva) |
 | Django Software Foundation | Documentación de Django y DEPs | Django 6.1 | BSD (permisiva) |
-| Proyectos oficiales | Documentación de psycopg 3, FastAPI, Pydantic, ASGI, pandas 3.0, NumPy, Matplotlib, scikit-learn, PyTorch, Redis, Celery, RabbitMQ, Ansible, Docker, Terraform, GitHub Actions, PyO3 y maturin | Verificadas el 11/10/2026 | Revisar en cada sitio |
+| Proyectos oficiales | Documentación de pytest, mypy, Pyright, Ruff, uv, psycopg 3, FastAPI, Pydantic, ASGI, pandas 3.0, NumPy, Matplotlib, scikit-learn, PyTorch, Redis, Celery, RabbitMQ, Ansible, Docker, Terraform, GitHub Actions, PyO3 y maturin | Verificadas el 11/10/2026 | Revisar en cada sitio |
+| Exercism (organización sin fines de lucro) | Track de Python | Vigente | Plataforma gratuita; revisar la licencia de los ejercicios en su repositorio |
 | Mozilla y British Council | MDN Web Docs, LearnEnglish | Vigentes | MDN: Creative Commons BY-SA; LearnEnglish: recursos gratuitos, cursos pagos aparte |
 
 Nota: los cursos sin licencia abierta explícita se pueden estudiar libremente, pero no conviene copiar su material a un dataset.
