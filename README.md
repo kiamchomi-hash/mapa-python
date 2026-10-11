@@ -18,6 +18,8 @@ Para empezar: [niveles/nivel-00-preparacion](niveles/nivel-00-preparacion/)
 
 Para marcar tu avance tema por tema: [TRACKER.md](TRACKER.md)
 
+Si querés especializarte como AI Engineer con un plan más corto: [plan-ia/](plan-ia/)
+
 **Contenido:**
 
 - [Orden recomendado](#orden-recomendado)
