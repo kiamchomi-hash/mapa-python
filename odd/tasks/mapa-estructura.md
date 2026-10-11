@@ -19,7 +19,7 @@ The 2026-10-11 review found: the README promises one folder per level with `teor
 
 - [x] T1 Shorter milestone: level 10 keeps MIT 6.102 classes 01–09 applied in Python (60 h); the full course (classes 10–19 + problem sets, 90 h) moves to Etapa 3. Recompute "Tiempo estimado" and every cumulative figure (milestone 1180 → 1090 h).
 - [x] T2 Consistency: Django/FastAPI note aligned with the portfolio; post-milestone content framed as a menu, not a mandatory degree; table of contents at the top of the README.
-- [ ] T3 Level folders: `niveles/nivel-NN-<slug>/` for levels 0–14 with `teoria/`, `ejercicios/`, `proyecto/` and a README per level (goal, sources, exercises, done-when checklist, link back). Level 0 gets a step-by-step start guide.
+- [x] T3 Level folders: `niveles/nivel-NN-<slug>/` for levels 0–14 with `teoria/`, `ejercicios/`, `proyecto/` and a README per level (goal, sources, exercises, done-when checklist, link back). Level 0 gets a step-by-step start guide.
 - [ ] T4 Wiring: README "Estructura de carpetas" and TRACKER link to the real folders.
 
 ## Acceptance criteria
@@ -37,4 +37,5 @@ The 2026-10-11 review found: the README promises one folder per level with `teor
 Created. Route per task: delegated direct (one bounded writer for T1–T4).
 
 - T1: level 10 = MIT 6.102 classes 01–09 in Python (60 h); classes 10–19 + psets moved to Etapa 3 row "Diseño de software a fondo" (90 h). Milestone 1090 h; Etapa 3 cumulative stays 1280, so later rows are unchanged. Commit ee8b5d3.
-- T2: Django/FastAPI one at a time, aligned with the two-framework portfolio; post-milestone framed as a menu (bullet in "Cómo usar este mapa" and in "Tiempo estimado"); TOC as a bold "Contenido" list (not an H2, so it does not list itself) at the end of the intro.
+- T2: Django/FastAPI one at a time, aligned with the two-framework portfolio; post-milestone framed as a menu (bullet in "Cómo usar este mapa" and in "Tiempo estimado"); TOC as a bold "Contenido" list (not an H2, so it does not list itself) at the end of the intro. Commit f1413ce.
+- T3: `niveles/` with 15 level folders (`teoria/`, `ejercicios/`, `proyecto/` + `.gitkeep`), one README each, and `niveles/README.md` index. Level 0 has the uv-based start guide (commands checked against docs.astral.sh and learn.microsoft.com WSL install page). Each README links to the next level in the recommended order (10 → 13 Web → 14 → 11 → 12 → 13).
