@@ -4,7 +4,9 @@ Actualizado: 11 de octubre de 2026
 
 ## Cómo usar este mapa
 
-El camino tiene 4 etapas en secuencia (niveles 0 a 13 y bloques A a D), un nivel 14 orientado al empleo, un track de experto en backend, infraestructura y cloud, y 2 tracks paralelos (matemáticas y sistemas) que se estudian al mismo tiempo desde la Etapa 3. Todas las fuentes son de universidades, de fundaciones y organismos de estándares (PSF, IETF, OWASP, CNCF) o la documentación oficial de cada tecnología, y se verificaron el 11 de octubre de 2026.
+El mapa va de cero a experto en Python y se organiza alrededor de un hito: el primer empleo como programador junior. Hasta ese hito hay dos etapas de fundamentos (niveles 0–10), un complemento de ciencias de la computación (Berkeley CS61A), la especialización Web y el nivel 14, orientado al empleo. Después siguen la Etapa 3 (Python avanzado, niveles 11–13, con cuatro especializaciones: web, automatización, datos e IA), dos tracks paralelos (matemáticas y sistemas), un track de lenguajes de sistemas (C y Rust), un track de experto en backend, infraestructura y cloud, la Etapa 4 (bloques A–D, para entender Python por dentro) y un camino a IA que termina con un modelo de lenguaje construido desde cero. El orden exacto está en "Orden recomendado" y las horas de cada parte, en "Tiempo estimado".
+
+**Política de fuentes:** casi todas las fuentes son cursos de universidades, publicaciones de fundaciones y organismos de estándares (PSF, IETF, OWASP, Linux Foundation y CNCF, Apache Software Foundation) o la documentación oficial de cada tecnología. Las excepciones se indican donde aparecen y son estas: dos libros pagos (Modern C, de la editorial Manning, y CS:APP, el libro de CMU 15-213); un curso universitario publicado en una plataforma comercial (Cryptography I de Stanford, en Coursera); materiales de empresas, que son la formación de los proveedores cloud (AWS, Google Cloud y Microsoft) y los libros de SRE de Google; las certificaciones pagas (AWS y CKA); el British Council para el inglés técnico; y Exercism, una organización sin fines de lucro que se usa solo como banco de ejercicios. Todas las fuentes se verificaron el 11 de octubre de 2026.
 
 - **Versión de referencia:** Python 3.15, la última estable ([What's New in 3.15](https://docs.python.org/3/whatsnew/3.15.html)).
 - **Regla de avance:** no pasar de nivel hasta resolver los ejercicios del nivel sin mirar la teoría. Cada tabla tiene una columna de ejercicios con la fuente de práctica de cada nivel.
@@ -352,7 +354,7 @@ Todas las fuentes son gratuitas salvo las indicadas como pagas. La licencia impo
 | Google | Libros de SRE | Vigentes | Lectura gratuita online |
 | PostgreSQL Global Development Group | Documentación de PostgreSQL | PostgreSQL 18 | PostgreSQL License (permisiva) |
 | Django Software Foundation | Documentación de Django y DEPs | Django 6.1 | BSD (permisiva) |
-| Proyectos oficiales | Documentación de pytest, mypy, Pyright, Ruff, uv, psycopg 3, FastAPI, Pydantic, ASGI, pandas 3.0, NumPy, Matplotlib, scikit-learn, PyTorch, Redis, Celery, RabbitMQ, Ansible, Docker, Terraform, GitHub Actions, PyO3 y maturin | Verificadas el 11/10/2026 | Revisar en cada sitio |
+| Proyectos oficiales | Documentación de pytest, mypy, Pyright, Ruff, uv, psycopg 3, FastAPI, Pydantic, ASGI, pandas 3.0, NumPy, Matplotlib, scikit-learn, PyTorch, Redis, Celery, RabbitMQ, Ansible, Docker, Terraform, GitHub Actions, PyO3, maturin, Let's Encrypt, OpenID Connect y Linux man-pages | Verificadas el 11/10/2026 | Revisar en cada sitio |
 | Exercism (organización sin fines de lucro) | Track de Python | Vigente | Plataforma gratuita; revisar la licencia de los ejercicios en su repositorio |
 | Mozilla y British Council | MDN Web Docs, LearnEnglish | Vigentes | MDN: Creative Commons BY-SA; LearnEnglish: recursos gratuitos, cursos pagos aparte |
 
