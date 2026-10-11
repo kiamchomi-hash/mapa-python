@@ -11,12 +11,16 @@ items get stable checkbox ids) and embeds that JSON in app/template.html.
 Modes:
     artifact    HTML fragment for a claude.ai artifact (the host adds the
                 document skeleton; progress syncs through window.claude when
-                available, localStorage otherwise).
-    standalone  Complete HTML document for a browser or the Android WebView;
-                progress lives only in localStorage.
+                available, localStorage otherwise). No gist code: the
+                artifact CSP blocks api.github.com.
+    standalone  Complete HTML document for a browser, GitHub Pages or the
+                Android WebView; progress lives in localStorage and, once the
+                user saves a GitHub token, syncs through a secret gist
+                (app/sync-core.js + app/gist-sync.js, inlined).
 
-Template placeholders: __DATA__ (the JSON) and __LOCAL_LABEL__ (the sync label
-shown while progress is stored only on the device).
+Template placeholders: __DATA__ (the JSON), __LOCAL_LABEL__ (the sync label
+shown while progress is stored only on the device) and the line
+__STANDALONE_SYNC__ (removed in artifact mode, so that output is unchanged).
 
 Output is deterministic: the same repository content produces the same bytes.
 """
@@ -30,6 +34,8 @@ from pathlib import Path
 APP_DIR = Path(__file__).resolve().parent
 REPO = APP_DIR.parent
 TEMPLATE = APP_DIR / "template.html"
+SYNC_SCRIPTS = (APP_DIR / "sync-core.js", APP_DIR / "gist-sync.js")
+SYNC_LINE = "__STANDALONE_SYNC__\n"
 GH = "https://github.com/kiamchomi-hash/mapa-python/blob/main/"
 SKIP = {"Navegación", "Qué va en cada carpeta"}
 LOCAL_LABEL = {"artifact": "guardado en este dispositivo", "standalone": "guardado en este celular"}
@@ -38,6 +44,18 @@ LOCAL_LABEL = {"artifact": "guardado en este dispositivo", "standalone": "guarda
 STANDALONE_RESET = """<style>
 body { margin: 0; }
 :root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+.brand .sync { margin-left: auto; }
+.syncbtn { font: 600 0.8rem var(--body); color: var(--accent); background: none; border: 1px solid var(--line); border-radius: 8px; padding: 4px 10px; cursor: pointer; }
+.syncpanel { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px; margin-top: 12px; display: grid; gap: 8px; }
+.syncpanel[hidden] { display: none; }
+.syncpanel h2 { font-size: 1.15rem; }
+.syncpanel p { margin: 0; font-size: 0.95rem; }
+.syncpanel label { font-weight: 700; }
+.syncpanel input { font: 0.95rem var(--mono); padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--fg); width: 100%; }
+.syncactions { display: flex; flex-wrap: wrap; gap: 8px; }
+.syncactions button { font: 600 0.95rem var(--body); border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px; cursor: pointer; background: var(--bg); color: var(--fg); }
+.syncactions button:first-child { background: var(--accent); border-color: var(--accent); color: var(--surface); }
+.syncmsg { color: var(--muted); min-height: 1.4em; }
 </style>
 """
 
@@ -207,10 +225,21 @@ def build_data():
     }
 
 
+def standalone_sync():
+    """The gist sync scripts, inlined into the page script before the first render."""
+    code = "".join(p.read_text(encoding="utf-8") for p in SYNC_SCRIPTS)
+    if "</script" in code.lower():
+        raise SystemExit("sync scripts must not contain </script")
+    return code
+
+
 def build_page(mode, data):
     # "</" is escaped so the JSON can never close its <script> element early.
     payload = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
     page = TEMPLATE.read_text(encoding="utf-8")
+    if page.count(SYNC_LINE) != 1:
+        raise SystemExit("template.html: expected exactly one __STANDALONE_SYNC__ line")
+    page = page.replace(SYNC_LINE, standalone_sync() if mode == "standalone" else "")
     page = page.replace("__LOCAL_LABEL__", LOCAL_LABEL[mode]).replace("__DATA__", payload)
     if mode == "artifact":
         return page
