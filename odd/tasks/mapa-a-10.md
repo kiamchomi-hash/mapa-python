@@ -19,10 +19,11 @@ The 2026-10-11 audit scored the map 7/10: excellent sources, but weak sequencing
 ## Tasks
 
 - [x] T1 Sequencing: job-ready level 14 depends only on stages 1–2 + Web specialization; CS61A moved early; Git moved to level 0; CS50W duplication removed.
-- [ ] T2 Time estimates: hours per level/block/track, total, and calendar at 10 h and 20 h per week.
+- [x] T2 Time estimates: hours per level/block/track, total, and calendar at 10 h and 20 h per week.
 - [x] T3 Exercises: an exercise/problem-set source for every level (fixes levels 8, 11, 12).
 - [x] T4 Content gaps: data structures, type checker (mypy/pyright), modern tooling (pyproject.toml, ruff, uv), interview prep.
-- [ ] T5 Consistency: intro matches the full content and the real source policy; tracker and license table updated.
+- [ ] T5 Consistency: intro matches the full content and the real source policy; tracker and license table updated. Commit 9a0f0df.
+- T2 done (route: delegated). New "Tiempo estimado" section with method, cumulative table and calendar at 10 h and 20 h per week; hours column in every table and per-section subtotals; hours in TRACKER items. Junior-job milestone: 1110 h (2.1 years at 10 h/week, 13 months at 20 h/week). Total: 6225 h (12 years at 10 h/week, 6 years at 20 h/week).
 
 ## Acceptance criteria
 
@@ -40,4 +41,5 @@ The 2026-10-11 audit scored the map 7/10: excellent sources, but weak sequencing
 
 - Branch created.
 - T1 done (route: delegated, writer trigger: 2 non-trivial files). Sections reordered to follow the recommended order; Web specialization moved before level 14; level 14 decoupled from stage 3, math and AI; CS61A as parallel CS complement for levels 3–7; Git basics in level 0 (Missing Semester 2026), Git in depth in level 9 (Pro Git); CS50W kept in one place; math, systems and C tracks start at stage 3. Commit c2e8924.
-- T3 + T4 done together (route: delegated; combined because the new topics and their exercise sources land in the same table rows). Exercise column added to every level/block/track table; data structures in level 6; pyproject.toml, uv and ruff in levels 8–9; mypy/Pyright in level 12; interview prep (Stanford CS9 + MIT 6.006 problem sets) in level 14; license table updated.
+- T3 + T4 done together (route: delegated; combined because the new topics and their exercise sources land in the same table rows). Exercise column added to every level/block/track table; data structures in level 6; pyproject.toml, uv and ruff in levels 8–9; mypy/Pyright in level 12; interview prep (Stanford CS9 + MIT 6.006 problem sets) in level 14; license table updated. Commit 9a0f0df.
+- T2 done (route: delegated). New "Tiempo estimado" section with method, cumulative table and calendar at 10 h and 20 h per week; hours column in every table and per-section subtotals; hours in TRACKER items. Junior-job milestone: 1110 h (2.1 years at 10 h/week, 13 months at 20 h/week). Total: 6225 h (12 years at 10 h/week, 6 years at 20 h/week).
