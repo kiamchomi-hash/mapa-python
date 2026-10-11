@@ -28,7 +28,7 @@ Para marcar una casilla, editá este archivo y cambiá `- [ ]` por `- [x]`. Las 
 - [ ] Nivel 7 – Programación orientada a objetos (35 h)
 - [ ] Nivel 8 – Organización y herramientas modernas: módulos, paquetes, `pyproject.toml`, `uv`, paquete publicado en TestPyPI (30 h)
 - [ ] Nivel 9 – Calidad: PEP 8, `ruff`, testing con pytest, debugging, Git a fondo (Pro Git) (40 h)
-- [ ] Nivel 10 – Diseño de software (MIT 6.102) (150 h)
+- [ ] Nivel 10 – Diseño de software: MIT 6.102, clases 01–09 aplicadas en Python (60 h)
 
 ## Especialización Web (nivel 13, adelantada)
 
@@ -53,12 +53,13 @@ Requisito: Etapa 1, Etapa 2, CS61A y la especialización Web.
   - [ ] Aplicación web con Django y PostgreSQL, publicada online
   - [ ] Análisis de datos reales con pandas, documentado
 
-**Hito de empleo (1180 h acumuladas):** con todo lo anterior marcado, ya podés postularte a puestos junior.
+**Hito de empleo (1090 h acumuladas):** con todo lo anterior marcado, ya podés postularte a puestos junior.
 
 ## Etapa 3 – Python avanzado
 
 - [ ] Nivel 11 – Python idiomático: generadores, decoradores, context managers (40 h)
 - [ ] Nivel 12 – Avanzado: type hints con mypy o Pyright en modo estricto, concurrencia, `asyncio`, profiling (60 h)
+- [ ] Diseño de software a fondo: MIT 6.102, clases 10–19 y problem sets (90 h)
 - [ ] Nivel 13 – Especializaciones (ver "Especializaciones del nivel 13")
 
 ## Track paralelo de matemáticas

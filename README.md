@@ -22,8 +22,8 @@ Las secciones de este documento siguen este orden; los tracks paralelos aparecen
 1. **Etapa 1** (niveles 0–5). Desde el nivel 0 corre en paralelo el track de terminal y Linux (escalones sólido y avanzado; el experto va con el track de sistemas). Desde el nivel 3 se suma en paralelo el complemento de ciencias de la computación (Berkeley CS61A).
 2. **Etapa 2** (niveles 6–10). CS61A termina junto con el nivel 7.
 3. **Especialización Web** (Harvard CS50W): la primera especialización del nivel 13, adelantada porque es requisito del nivel 14.
-4. **Nivel 14 – Listo para trabajar.** Al terminarlo llegás al **hito de empleo: ya podés postularte a puestos junior** (unas 1180 h acumuladas: 2,3 años a 10 h por semana o 14 meses a 20 h por semana). Este hito no depende de la Etapa 3, de las matemáticas ni de la IA.
-5. **Etapa 3** (niveles 11–12), junto con los tracks paralelos de matemáticas y de sistemas y con el track de C y Rust. El track de experto empieza en paralelo.
+4. **Nivel 14 – Listo para trabajar.** Al terminarlo llegás al **hito de empleo: ya podés postularte a puestos junior** (unas 1090 h acumuladas: 2,1 años a 10 h por semana o 13 meses a 20 h por semana). Este hito no depende de la Etapa 3, de las matemáticas ni de la IA.
+5. **Etapa 3** (niveles 11–12 y diseño de software a fondo), junto con los tracks paralelos de matemáticas y de sistemas y con el track de C y Rust. El track de experto empieza en paralelo.
 6. **Especializaciones restantes** del nivel 13: automatización y datos.
 7. **Etapa 4** (bloques A–D). El bloque A requiere matemática discreta; el bloque C requiere sistemas operativos y CMU 15-213.
 8. **Especialización IA y Camino a IA:** requieren la Etapa 3 y el track de matemáticas completo.
@@ -36,11 +36,11 @@ El mapa completo equivale aproximadamente a una carrera de grado en computación
 
 | Paso | Contenido | Horas | Acumulado | A 10 h por semana | A 20 h por semana |
 | --- | --- | --- | --- | --- | --- |
-| 1–2 | Etapa 1 (125), CS61A (180), Etapa 2 (315) y terminal y Linux, escalones sólido y avanzado (70) | 690 | 690 | 69 semanas (1,3 años) | 35 semanas (8 meses) |
-| 3 | Especialización Web | 150 | 840 | 84 semanas (1,6 años) | 42 semanas (10 meses) |
-| 4 | Nivel 14 – Listo para trabajar, con portfolio | 340 | **1180** | **118 semanas (2,3 años)** | **59 semanas (14 meses)** |
-| | **Hito de empleo: podés postularte a puestos junior** | | **1180** | | |
-| 5 | Etapa 3 (niveles 11–12) | 100 | 1280 | 128 semanas (2,5 años) | 64 semanas (1,2 años) |
+| 1–2 | Etapa 1 (125), CS61A (180), Etapa 2 (225) y terminal y Linux, escalones sólido y avanzado (70) | 600 | 600 | 60 semanas (1,2 años) | 30 semanas (7 meses) |
+| 3 | Especialización Web | 150 | 750 | 75 semanas (1,4 años) | 38 semanas (9 meses) |
+| 4 | Nivel 14 – Listo para trabajar, con portfolio | 340 | **1090** | **109 semanas (2,1 años)** | **55 semanas (13 meses)** |
+| | **Hito de empleo: podés postularte a puestos junior** | | **1090** | | |
+| 5 | Etapa 3 (niveles 11–12 y diseño de software a fondo) | 190 | 1280 | 128 semanas (2,5 años) | 64 semanas (1,2 años) |
 | 5 | Track de matemáticas | 770 | 2050 | 205 semanas (3,9 años) | 103 semanas (2 años) |
 | 5 | Track de sistemas (630) y terminal y Linux, escalón experto (50) | 680 | 2730 | 273 semanas (5,3 años) | 137 semanas (2,6 años) |
 | 5 | C y Rust | 620 | 3350 | 335 semanas (6,4 años) | 168 semanas (3,2 años) |
@@ -98,9 +98,11 @@ Al terminar esta etapa podés construir proyectos medianos, probados, versionado
 | 7. Programación orientada a objetos | Clases, herencia, composición, métodos especiales | MIT 6.100L (segunda mitad) + CS50P (semana 8) | Problem sets de la segunda mitad de MIT 6.100L + CS50P: Problem Set 8 | 35 |
 | 8. Organización del código y herramientas modernas | Módulos, paquetes, biblioteca estándar, configuración del proyecto con `pyproject.toml`, entornos y dependencias con `uv` (además de `venv` y `pip`), empaquetar y publicar tu propio paquete | [Tutorial oficial: módulos](https://docs.python.org/es/3/tutorial/modules.html) + [Packaging User Guide: Writing your pyproject.toml](https://packaging.python.org/en/latest/guides/writing-pyproject-toml/) + [documentación de uv](https://docs.astral.sh/uv/) (Astral) + clase [Packaging and Shipping Code](https://missing.csail.mit.edu/2026/shipping-code/) de Missing Semester | CS50P: Problem Set 4 (bibliotecas) + ejercicios de Packaging and Shipping Code + publicar tu propio paquete en TestPyPI con `pyproject.toml` y `uv`, siguiendo el tutorial [Packaging Python Projects](https://packaging.python.org/en/latest/tutorials/packaging-projects/) | 30 |
 | 9. Calidad | PEP 8, docstrings (PEP 257), linting y formato automático con `ruff`, testing con `unittest` y pytest, debugging con `pdb`, Git a fondo (ramas, merge, rebase, flujo con pull requests) | [PEP 8](https://peps.python.org/pep-0008/) + [documentación de Ruff](https://docs.astral.sh/ruff/) (Astral) + [documentación de pytest](https://docs.pytest.org/) + [MIT Missing Semester](https://missing.csail.mit.edu/2026/) (edición 2026) + [Pro Git](https://git-scm.com/book/es/v2) (libro oficial de Git, en español) | CS50P: Problem Set 5 (unit tests) + ejercicios de las clases Version Control and Git, Debugging and Profiling y [Code Quality](https://missing.csail.mit.edu/2026/code-quality/) de Missing Semester + configurar `ruff` y pytest en un proyecto propio | 40 |
-| 10. Diseño de software | Especificaciones, tipos abstractos, invariantes, código mantenible, patrones de diseño | [MIT 6.102 Software Construction](https://web.mit.edu/6.102/www/sp26/) (Spring 2026, en TypeScript; los conceptos aplican a Python) | Problem sets de MIT 6.102 (en TypeScript); después, rehacer uno en Python con type hints | 150 |
+| 10. Diseño de software | Chequeo estático, testing, revisión de código, especificaciones, tipos abstractos de datos, funciones de abstracción e invariantes de representación, interfaces y subtipos, igualdad | [MIT 6.102 Software Construction](https://web.mit.edu/6.102/www/sp26/) (Spring 2026), solo las clases 01–09: de [Static Checking](https://web.mit.edu/6.102/www/sp26/classes/01-static-checking/) a [Equality](https://web.mit.edu/6.102/www/sp26/classes/09-equality/). El curso usa TypeScript; los conceptos aplican a Python | Los reading exercises de las clases 01–09; después, aplicar cada idea en Python con type hints: especificaciones como docstrings, chequeo del invariante de representación y tests | 60 |
 
-**Horas de la etapa:** 315.
+**Horas de la etapa:** 225.
+
+El resto de MIT 6.102 (clases 10–19 y los problem sets, en TypeScript) se estudia en la Etapa 3, como "Diseño de software a fondo".
 
 ## Especialización Web (nivel 13, adelantada)
 
@@ -129,7 +131,7 @@ Es la capa práctica que piden los avisos de empleo. Requiere solo la Etapa 1, l
 | Preparación para entrevistas técnicas | Resolver problemas de algoritmos y estructuras de datos en voz alta y con tiempo limitado, entrevistas conductuales, y diseño de sistemas a nivel junior: explicar y defender la arquitectura de tus proyectos del portfolio | [Stanford CS9 Problem-Solving for the CS Technical Interview](https://web.stanford.edu/class/cs9/) (Spring 2022) + [problem sets de MIT 6.006](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/pages/assignments/) (solo los temas ya vistos: ordenamiento, hashing, árboles, BFS y DFS) | Los problemas de las sesiones de práctica de CS9 + los problem sets de 6.006 indicados, cronometrados; simulacros de entrevista con otra persona | 60 |
 | Inglés técnico | Lectura de documentación y entrevistas; apuntar a nivel B2 o más | [British Council LearnEnglish](https://learnenglish.britishcouncil.org/) (recursos gratuitos y test de nivel) | Test de nivel de LearnEnglish; leer en inglés la documentación de todo el nivel | Continuo, fuera del total |
 
-**Horas del nivel:** 340 (220 de temas y 120 del portfolio). Con este nivel llegás al hito de empleo: **1180 h acumuladas**.
+**Horas del nivel:** 340 (220 de temas y 120 del portfolio). Con este nivel llegás al hito de empleo: **1090 h acumuladas**.
 
 **Django o FastAPI:** empezá por uno solo. Django si querés backend web completo; FastAPI si apuntás a APIs y servicios de datos o IA.
 
@@ -147,9 +149,10 @@ Al terminar esta etapa escribís Python idiomático, tipado, concurrente y medid
 | --- | --- | --- | --- | --- |
 | 11. Python idiomático | Comprensiones, iteradores, generadores, decoradores, context managers, `itertools`, `functools` | [Functional Programming HOWTO](https://docs.python.org/3/howto/functional.html) + [Tutorial oficial: clases e iteradores](https://docs.python.org/es/3/tutorial/classes.html) | Labs y homework de CS61A sobre iteradores y generadores, rehechos sin mirar + ejercicios de generadores, decoradores y desempaquetado de [Exercism, track de Python](https://exercism.org/tracks/python) | 40 |
 | 12. Avanzado | Type hints y chequeo estático con mypy o Pyright, dataclasses, concurrencia (`threading`, `multiprocessing`, `asyncio`), rendimiento con `timeit`, `tracemalloc` y el nuevo paquete `profiling` (PEP 799, Python 3.15) | Documentación oficial de [`typing`](https://docs.python.org/3/library/typing.html) y [`asyncio`](https://docs.python.org/3/library/asyncio.html) + [documentación de mypy](https://mypy.readthedocs.io/en/stable/) o de [Pyright](https://microsoft.github.io/pyright/) + [What's New in 3.15](https://docs.python.org/3/whatsnew/3.15.html) | Pasar mypy en modo `--strict` (o Pyright en modo estricto) sobre los proyectos de los niveles 8–10; reescribir un descargador secuencial con `threading`, `multiprocessing` y `asyncio`, y comparar las tres versiones con `timeit` y `profiling`; ejercicios de clases y dataclasses de Exercism | 60 |
+| Diseño de software a fondo (continúa el nivel 10) | Programación funcional, tipos de datos recursivos, gramáticas y parsing, debugging, concurrencia, promesas, exclusión mutua, callbacks e interfaces gráficas, paso de mensajes, lenguajes pequeños | MIT 6.102 (Spring 2026), clases 10–19: de [Functional Programming](https://web.mit.edu/6.102/www/sp26/classes/10-functional-programming/) a [Little Languages](https://web.mit.edu/6.102/www/sp26/classes/19-little-languages/), en TypeScript | Los reading exercises de las clases 10–19 + los problem sets del curso, en TypeScript | 90 |
 | 13. Especialización | Cursar más de un dominio: web (ya cursada antes del nivel 14), automatización, datos e IA, una por vez (ver "Especializaciones del nivel 13") | Ver la sección "Especializaciones del nivel 13" | Los de cada especialización (ver "Especializaciones del nivel 13") | Ver especializaciones |
 
-**Horas de la etapa:** 100 (niveles 11–12; las especializaciones se cuentan aparte).
+**Horas de la etapa:** 190 (niveles 11–12 y diseño de software a fondo; las especializaciones se cuentan aparte).
 
 Novedades de Python 3.15 que conviene conocer en esta etapa: imports perezosos con `lazy import` (PEP 810), UTF-8 como codificación por defecto (PEP 686) y el tipo inmutable `frozendict` (PEP 814).
 
