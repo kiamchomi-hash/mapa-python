@@ -26,10 +26,20 @@ El Plan IA y el mapa completo también vienen como app de Android, con las fases
 
 - **Descarga:** [mapa-python.apk](https://github.com/kiamchomi-hash/mapa-python/releases/download/app/mapa-python.apk)
 - **Instalación:** abrí el enlace desde el celular, descargá el APK y abrilo. La primera vez Android te pide permiso para instalar apps desde el navegador (o desde "orígenes desconocidos"); dalo y confirmá la instalación.
-- **Tu avance:** queda guardado en el celular, no se sube a ningún lado. Si desinstalás la app, se borra.
+- **Tu avance:** queda guardado en el celular. Si activás la sincronización (abajo), también se copia a un gist de tu cuenta de GitHub; si no, no se sube a ningún lado y se borra al desinstalar la app.
 - **Actualizaciones:** cada push a `main` vuelve a armar el APK con el contenido más reciente. Para actualizar, descargalo de nuevo e instalalo encima; el avance se mantiene.
 
-En la computadora está la misma app como artifact de claude.ai ([abrir](https://claude.ai/artifact/LgMnTf56YBsuNTrb4pdrFQ); es privado, solo lo ve quien lo creó), que sincroniza el avance con tu cuenta. En Linux también hay un lanzador en el menú de aplicaciones y en el escritorio, llamado Mapa Python.
+En la computadora abrí la misma app en <https://kiamchomi-hash.github.io/mapa-python/> (se publica sola en cada push a `main`). En Linux también hay un lanzador en el menú de aplicaciones y en el escritorio, llamado Mapa Python.
+
+**Sincronizar el celular y la compu:**
+
+1. Creá un token classic en GitHub desde [este enlace](https://github.com/settings/tokens/new?scopes=gist&description=Mapa%20Python), con solo el permiso `gist` marcado y una fecha de vencimiento.
+2. En la app del celular tocá **Sincronizar**, pegá el token y tocá **Guardar y sincronizar**.
+3. Hacé lo mismo en la página de la compu (con el mismo token o con otro igual).
+
+El avance queda en un gist secreto (archivo `mapa-python-progreso.json`): no aparece en tu perfil, pero cualquiera con su enlace lo puede ver (solo dice qué casillas tildaste). Si una casilla cambió en los dos lados, gana el cambio más nuevo. Sin internet todo se guarda en el dispositivo y se sube cuando vuelve la conexión. El token queda guardado solo en cada dispositivo; **Desconectar** lo borra. Se usa un token classic porque los fine-grained no figuran como compatibles con leer y listar gists en la documentación de GitHub.
+
+El artifact de claude.ai ([abrir](https://claude.ai/artifact/LgMnTf56YBsuNTrb4pdrFQ); privado) sigue andando y sincroniza con tu cuenta de claude.ai, pero no con el celular ni con la página de la compu.
 
 **Contenido:**
 
