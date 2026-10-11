@@ -367,7 +367,7 @@ Todas las fuentes son gratuitas salvo las indicadas como pagas. La licencia impo
 | PostgreSQL Global Development Group | Documentación de PostgreSQL | PostgreSQL 18 | PostgreSQL License (permisiva) |
 | Django Software Foundation | Documentación de Django y DEPs | Django 6.1 | BSD (permisiva) |
 | Proyectos oficiales | Documentación de pytest, mypy, Pyright, Ruff, uv, psycopg 3, FastAPI, Pydantic, ASGI, pandas 3.0, NumPy, Matplotlib, scikit-learn, PyTorch, Redis, Celery, RabbitMQ, Ansible, Docker, Terraform, GitHub Actions, PyO3, maturin, Let's Encrypt, OpenID Connect, Linux man-pages, el manual de GNU Bash, WSL y la especificación POSIX del shell (The Open Group) | Verificadas el 11/10/2026 | Revisar en cada sitio |
-| Exercism (organización sin fines de lucro) | Track de Python | Vigente | Plataforma gratuita; revisar la licencia de los ejercicios en su repositorio |
+| Exercism (organización sin fines de lucro) | Tracks de Python y de Bash | Vigente | Plataforma gratuita; revisar la licencia de los ejercicios en su repositorio |
 | Mozilla y British Council | MDN Web Docs, LearnEnglish | Vigentes | MDN: Creative Commons BY-SA; LearnEnglish: recursos gratuitos, cursos pagos aparte |
 
 Nota: los cursos sin licencia abierta explícita se pueden estudiar libremente, pero no conviene copiar su material a un dataset.
