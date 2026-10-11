@@ -28,9 +28,9 @@ The app exists only as a private claude.ai artifact (https://claude.ai/artifact/
 
 The user wants progress synced between the APK and the desktop. Chosen design: a private GitHub gist (`progreso.json`) reached with a user-created token (gist permission only), last-writer-wins per checklist item; the desktop switches from the claude.ai artifact to the same standalone page served by GitHub Pages.
 
-- [ ] T6 Template: gist sync module for standalone mode (token settings UI, find-or-create gist, per-item timestamps, merge, offline queue, status label); pure merge function covered by a node test.
-- [ ] T7 CI: deploy the standalone page to GitHub Pages in the same workflow; enable Pages (build type workflow).
-- [ ] T8 Desktop launcher points to the Pages URL; docs explain token creation and setup on both devices.
+- [x] T6 Template: gist sync module for standalone mode (token settings UI, find-or-create gist, per-item timestamps, merge, offline queue, status label); pure merge function covered by a node test. Commit `306b009`. Route: delegated writer.
+- [x] T7 CI: deploy the standalone page to GitHub Pages in the same workflow (commit `b92e8c9`, delegated writer). [ ] Enable Pages (build type workflow): parent.
+- [ ] T8 Desktop launcher points to the Pages URL (parent, outside the repo); [x] docs explain token creation and setup on both devices (commit `1e4ce36`, delegated writer).
 
 ## Checks
 
@@ -64,3 +64,16 @@ T5: user confirms signing key + secrets + push; then verify the CI run, the sign
 - CI run 38170024435 on feat/app-android: success, all steps green, release `app` published.
 - Download URL returns 200 (35 KB); downloaded APK signed with the same certificate.
 - Pending: on-device check by the user; merge into main, then remove the temporary branch trigger from the workflow.
+
+## T6–T8 evidence (2026-10-11)
+
+- Design: `app/sync-core.js` (pure: normalize, migrateV1, mergeProgress, doneMap, sameProgress, nextLink) and `app/gist-sync.js` (UI + network) are inlined by `build_app.py` only in standalone mode, at the `__STANDALONE_SYNC__` line before the first render. Artifact output stays byte-identical to before (104510 bytes, `cmp` OK), keeps the db sync path and contains no `api.github.com`. Deviation from the brief: the artifact keeps the v1 state (no v2 migration there) because it has its own origin and db sync.
+- State: `mapa-python-progress-v2` = `{items: {id: {v, t}}}`, migrated once from v1 with t = 0; v1 key still written for compatibility. Gist file `mapa-python-progreso.json`, description "Mapa Python – progreso", `public: false`; gist id cached in `mapa-python-gist-id`; token in `mapa-python-gh-token` only.
+- Token: classic with scope `gist` (https://github.com/settings/tokens/new?scopes=gist&description=Mapa%20Python). Fine-grained rejected: the "Gists" user permission exists for POST/PATCH /gists, but GET /gists and GET /gists/{id} are not listed in https://docs.github.com/en/rest/authentication/endpoints-available-for-fine-grained-personal-access-tokens, so listing secret gists to find the file on the second device is not documented. Saving validates with GET /gists?per_page=1 and requires `gist` in `X-OAuth-Scopes`.
+- CORS: `curl -X OPTIONS https://api.github.com/gists -H 'Origin: null'` (PATCH, authorization/content-type/x-github-api-version) -> 204, `access-control-allow-origin: *`, those headers allowed, `Link` and `X-OAuth-Scopes` exposed. gist.githubusercontent.com raw also sends `*`. The APK keeps `file:///android_asset/index.html`; no Java change.
+- Tests: `node --test app/sync-core.test.mjs` 10/10 pass (newer wins, uncheck propagates, tie, union, empty, malformed, v1 migration, migrated loses, key order, Link header). RED not observable first (new module). Both modes deterministic (`cmp`), JSON + inline script parse in node. Playwright (Chromium, file://, mocked api.github.com, fake token): v1 migrated, panel opens, empty token message, save -> list -> get -> merge (newer remote uncheck won) -> PATCH, label "sincronizado HH:MM", a later click PATCHed after the 1.5 s debounce, no page errors, token never in a URL.
+- Workflow: `pages` job only on refs/heads/main, permissions contents read / pages write / id-token write, environment github-pages, concurrency `pages`. Actions configure-pages@v6, upload-pages-artifact@v5, deploy-pages@v5 (current majors, node 24; brief named v5/v3/v4, which also exist). PyYAML parses; every run block passes `bash -n`.
+
+## Next step (parent)
+
+Enable Pages with build type `workflow`; update the desktop launcher to https://kiamchomi-hash.github.io/mapa-python/; push; check the CI run (APK build; Pages deploys only after the merge into main); on-device test of sync with a real token created by the user; after merge remove the temporary branch trigger.
