@@ -1,0 +1,121 @@
+# Builds the Android app from the repository content and publishes the APK.
+#
+# Stable download URL (release with the fixed tag "app"):
+#   https://github.com/kiamchomi-hash/mapa-python/releases/download/app/mapa-python.apk
+#
+# Required repository secrets for a signed, installable release APK:
+#   ANDROID_KEYSTORE_BASE64   base64 of the release keystore (.jks)
+#   ANDROID_KEYSTORE_PASSWORD keystore password
+#   ANDROID_KEY_ALIAS         key alias inside the keystore
+#   ANDROID_KEY_PASSWORD      key password
+name: Android app
+
+on:
+  push:
+    branches:
+      - main
+      # Temporary: validates the pipeline before merging. Remove after the merge.
+      - feat/app-android
+    paths:
+      - "niveles/**"
+      - "plan-ia/**"
+      - "app/**"
+      - "android/**"
+      - ".github/workflows/android.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: android-app
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      # AGP 8.7.3 requires Gradle >= 8.9; there is no wrapper in the repo.
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: "8.10.2"
+
+      - name: Generate the app page
+        run: python3 app/build_app.py --mode standalone --out android/app/src/main/assets/index.html
+
+      - name: Prepare release signing
+        id: signing
+        env:
+          KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        run: |
+          if [ -z "$KEYSTORE_BASE64" ] || [ -z "$KEYSTORE_PASSWORD" ] || [ -z "$KEY_ALIAS" ] || [ -z "$KEY_PASSWORD" ]; then
+            echo "::warning::Signing secrets are missing; the APK will be unsigned and cannot be installed."
+            echo "signed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          keystore="$RUNNER_TEMP/release.jks"
+          printf '%s' "$KEYSTORE_BASE64" | base64 --decode > "$keystore"
+          {
+            echo "SIGNING_STORE_FILE=$keystore"
+            echo "SIGNING_STORE_PASSWORD=$KEYSTORE_PASSWORD"
+            echo "SIGNING_KEY_ALIAS=$KEY_ALIAS"
+            echo "SIGNING_KEY_PASSWORD=$KEY_PASSWORD"
+          } >> "$GITHUB_ENV"
+          echo "signed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Build release APK
+        env:
+          VERSION_CODE: ${{ github.run_number }}
+        run: gradle -p android assembleRelease --no-daemon --stacktrace
+
+      - name: Collect the APK
+        run: |
+          out=android/app/build/outputs/apk/release
+          if [ -f "$out/app-release.apk" ]; then
+            cp "$out/app-release.apk" mapa-python.apk
+          else
+            cp "$out/app-release-unsigned.apk" mapa-python.apk
+          fi
+          ls -l mapa-python.apk
+
+      - name: Verify the signature
+        if: steps.signing.outputs.signed == 'true'
+        run: |
+          apksigner="$(ls -d "$ANDROID_HOME"/build-tools/*/ | sort -V | tail -n 1)apksigner"
+          "$apksigner" verify --print-certs mapa-python.apk
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mapa-python-apk
+          path: mapa-python.apk
+          if-no-files-found: error
+
+      - name: Publish to the "app" release
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/feat/app-android'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SIGNED: ${{ steps.signing.outputs.signed }}
+        run: |
+          if [ "$SIGNED" != "true" ]; then
+            echo "::error::Not publishing: the APK is unsigned (an unsigned release APK cannot be installed). Add the ANDROID_* signing secrets."
+            exit 1
+          fi
+          gh release view app >/dev/null 2>&1 || gh release create app \
+            --title "Mapa Python (Android)" \
+            --notes "App de estudio del Mapa Python para Android. Se reconstruye en cada push a main con el contenido más reciente. Descarga: https://github.com/kiamchomi-hash/mapa-python/releases/download/app/mapa-python.apk" \
+            --latest
+          gh release upload app mapa-python.apk --clobber
