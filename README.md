@@ -12,8 +12,30 @@ El mapa va de cero a experto en Python y se organiza alrededor de un hito: el pr
 - **Regla de avance:** no pasar de nivel hasta resolver los ejercicios del nivel sin mirar la teoría. Cada tabla tiene una columna de ejercicios con la fuente de práctica de cada nivel.
 - **Estructura de carpetas:** una carpeta por nivel, cada una con `teoria/`, `ejercicios/` y `proyecto/`.
 - **Proporción sugerida:** 30% leer o ver clases, 70% escribir código.
+- **Después del hito de empleo:** lo que sigue es un menú, no una secuencia obligatoria. Elegís qué estudiar según tu trabajo y tus intereses; el orden de los pasos 5–8 solo indica qué requiere qué.
 
 Para marcar tu avance tema por tema: [TRACKER.md](TRACKER.md)
+
+**Contenido:**
+
+- [Orden recomendado](#orden-recomendado)
+- [Tiempo estimado](#tiempo-estimado)
+- [Etapa 1 – Fundamentos (niveles 0–5)](#etapa-1--fundamentos-niveles-05)
+- [Complemento de ciencias de la computación (en paralelo con los niveles 3–7)](#complemento-de-ciencias-de-la-computación-en-paralelo-con-los-niveles-37)
+- [Track paralelo de terminal y Linux (desde el nivel 0)](#track-paralelo-de-terminal-y-linux-desde-el-nivel-0)
+- [Etapa 2 – Programador sólido (niveles 6–10)](#etapa-2--programador-sólido-niveles-610)
+- [Especialización Web (nivel 13, adelantada)](#especialización-web-nivel-13-adelantada)
+- [Nivel 14 – Listo para trabajar](#nivel-14--listo-para-trabajar)
+- [Etapa 3 – Python avanzado (niveles 11–13)](#etapa-3--python-avanzado-niveles-1113)
+- [Track paralelo de matemáticas](#track-paralelo-de-matemáticas)
+- [Track paralelo de sistemas](#track-paralelo-de-sistemas)
+- [Lenguajes de sistemas: C y Rust](#lenguajes-de-sistemas-c-y-rust)
+- [Especializaciones del nivel 13](#especializaciones-del-nivel-13)
+- [Track de experto: backend, infraestructura y cloud](#track-de-experto-backend-infraestructura-y-cloud)
+- [Etapa 4 – Intelectual de Python (bloques A–D)](#etapa-4--intelectual-de-python-bloques-ad)
+- [Camino a IA y proyecto final](#camino-a-ia-y-proyecto-final)
+- [Práctica continua](#práctica-continua)
+- [Fuentes verificadas y licencias](#fuentes-verificadas-y-licencias)
 
 ## Orden recomendado
 
@@ -32,7 +54,7 @@ Las secciones de este documento siguen este orden; los tracks paralelos aparecen
 
 Las horas de cada tabla son estimaciones e incluyen clases, lectura, ejercicios y proyecto. Se basan en la carga publicada de cada curso cuando existe: un crédito ECTS equivale a 25–30 h de trabajo (cada curso del MOOC de Helsinki declara 5 ECTS), y en el MIT una unidad equivale a 1 h semanal durante un cuatrimestre de unas 14 semanas, así que un curso de 12 unidades ronda las 170 h. Si un tema te resulta nuevo de verdad, contá un 25% más.
 
-El mapa completo equivale aproximadamente a una carrera de grado en computación más una maestría. No hace falta terminarlo para trabajar: el hito de empleo llega al final del paso 4, y lo demás se estudia mientras trabajás.
+El mapa completo equivale aproximadamente a una carrera de grado en computación más una maestría. Las 6345 h son el mapa completo, no un requisito: el hito de empleo llega al final del paso 4, y lo demás es un menú del que elegís mientras trabajás.
 
 | Paso | Contenido | Horas | Acumulado | A 10 h por semana | A 20 h por semana |
 | --- | --- | --- | --- | --- | --- |
@@ -133,7 +155,7 @@ Es la capa práctica que piden los avisos de empleo. Requiere solo la Etapa 1, l
 
 **Horas del nivel:** 340 (220 de temas y 120 del portfolio). Con este nivel llegás al hito de empleo: **1090 h acumuladas**.
 
-**Django o FastAPI:** empezá por uno solo. Django si querés backend web completo; FastAPI si apuntás a APIs y servicios de datos o IA.
+**Django y FastAPI, uno por vez:** el portfolio pide los dos, pero no los estudies en paralelo. Empezá por Django si apuntás a backend web completo, o por FastAPI si apuntás a APIs, datos o IA, y hacé con él su proyecto del portfolio. El otro framework llega con el segundo proyecto del portfolio.
 
 **Portfolio mínimo para postularte** (unas 120 h en total):
 
