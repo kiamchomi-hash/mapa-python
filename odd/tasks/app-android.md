@@ -24,6 +24,14 @@ The app exists only as a private claude.ai artifact (https://claude.ai/artifact/
 - [x] T4 Docs: install instructions in README; launcher note. Commit `959e6b8`. Route: delegated writer.
 - [x] T5 (user-gated) Create signing key + repo secrets, push, verify CI run and the APK download.
 
+## Sync extension (user request 2026-10-11)
+
+The user wants progress synced between the APK and the desktop. Chosen design: a private GitHub gist (`progreso.json`) reached with a user-created token (gist permission only), last-writer-wins per checklist item; the desktop switches from the claude.ai artifact to the same standalone page served by GitHub Pages.
+
+- [ ] T6 Template: gist sync module for standalone mode (token settings UI, find-or-create gist, per-item timestamps, merge, offline queue, status label); pure merge function covered by a node test.
+- [ ] T7 CI: deploy the standalone page to GitHub Pages in the same workflow; enable Pages (build type workflow).
+- [ ] T8 Desktop launcher points to the Pages URL; docs explain token creation and setup on both devices.
+
 ## Checks
 
 - Generator runs and output passes JS/JSON syntax check; workflow YAML parses; CI build is the real proof (T5).
