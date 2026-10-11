@@ -18,18 +18,11 @@ The 2026-10-11 audit scored the map 7/10: excellent sources, but weak sequencing
 
 ## Tasks
 
-- [x] T1 Sequencing: job-ready level 14 depends only on stages 1–2 + Web specialization; CS61A moved early; Git moved to level 0; CS50W duplication removed.
-- [x] T2 Time estimates: hours per level/block/track, total, and calendar at 10 h and 20 h per week.
-- [x] T3 Exercises: an exercise/problem-set source for every level (fixes levels 8, 11, 12).
-- [x] T4 Content gaps: data structures, type checker (mypy/pyright), modern tooling (pyproject.toml, ruff, uv), interview prep.
-- [x] T5 Consistency: intro matches the full content and the real source policy; tracker and license table updated. Commit 9a0f0df.
-- T2 done (route: delegated). New "Tiempo estimado" section with method, cumulative table and calendar at 10 h and 20 h per week; hours column in every table and per-section subtotals; hours in TRACKER items. Junior-job milestone: 1110 h (2.1 years at 10 h/week, 13 months at 20 h/week). Total: 6225 h (12 years at 10 h/week, 6 years at 20 h/week). Commit deae8a9.
-- T5 done (route: delegated). Intro rewritten to describe the real structure (junior milestone, C/Rust track, AI path) and an honest source policy listing every exception (paid books, Coursera course, cloud-vendor material, paid certifications, British Council, Exercism); license table synced. Commit hash recorded in the final report (this commit).
-
-## Verification evidence
-
-- Link check over README URLs: 146 of 152 return 200; the 6 others are pre-existing links blocked to bots or unreachable from this host (docs.ansible.com 429, stat110.hsites.harvard.edu 403, learnenglish.britishcouncil.org and man7.org timeouts); all new or changed URLs return 200.
-- Structural readback: every README content section has a TRACKER section; all 14 tables with an exercise column have a non-empty exercise cell in every row; CS50W appears once in TRACKER.
+- [x] T1 Sequencing: job-ready level 14 depends only on stages 1–2 + Web specialization; CS61A moved early; Git moved to level 0; CS50W duplication removed. Commit c2e8924.
+- [x] T2 Time estimates: hours per level/block/track, total, and calendar at 10 h and 20 h per week. Commit deae8a9.
+- [x] T3 Exercises: an exercise/problem-set source for every level (fixes levels 8, 11, 12). Commit 9a0f0df.
+- [x] T4 Content gaps: data structures, type checker (mypy/pyright), modern tooling (pyproject.toml, ruff, uv), interview prep. Commit 9a0f0df (combined with T3: same table rows).
+- [x] T5 Consistency: intro matches the full content and the real source policy; tracker and license table updated. Commit d9a4691.
 
 ## Acceptance criteria
 
@@ -45,13 +38,19 @@ The 2026-10-11 audit scored the map 7/10: excellent sources, but weak sequencing
 
 ## Progress
 
-- Branch created.
-- T1 done (route: delegated, writer trigger: 2 non-trivial files). Sections reordered to follow the recommended order; Web specialization moved before level 14; level 14 decoupled from stage 3, math and AI; CS61A as parallel CS complement for levels 3–7; Git basics in level 0 (Missing Semester 2026), Git in depth in level 9 (Pro Git); CS50W kept in one place; math, systems and C tracks start at stage 3. Commit c2e8924.
-- T3 + T4 done together (route: delegated; combined because the new topics and their exercise sources land in the same table rows). Exercise column added to every level/block/track table; data structures in level 6; pyproject.toml, uv and ruff in levels 8–9; mypy/Pyright in level 12; interview prep (Stanford CS9 + MIT 6.006 problem sets) in level 14; license table updated. Commit 9a0f0df.
-- T2 done (route: delegated). New "Tiempo estimado" section with method, cumulative table and calendar at 10 h and 20 h per week; hours column in every table and per-section subtotals; hours in TRACKER items. Junior-job milestone: 1110 h (2.1 years at 10 h/week, 13 months at 20 h/week). Total: 6225 h (12 years at 10 h/week, 6 years at 20 h/week). Commit deae8a9.
-- T5 done (route: delegated). Intro rewritten to describe the real structure (junior milestone, C/Rust track, AI path) and an honest source policy listing every exception (paid books, Coursera course, cloud-vendor material, paid certifications, British Council, Exercism); license table synced. Commit hash recorded in the final report (this commit).
+All tasks done (route: delegated, writer trigger: 2 non-trivial files).
+
+- T1: sections reordered to follow "Orden recomendado"; Web specialization moved before level 14; CS61A as parallel complement for levels 3–7; Git basics in level 0, Git in depth in level 9 (Pro Git); math, systems and C tracks start at stage 3.
+- T2: "Tiempo estimado" section. Junior-job milestone ~1110 h (2.1 years at 10 h/week, 13 months at 20 h/week). Full map ~6225 h.
+- T3 + T4: exercise column in every table; data structures (level 6); pyproject.toml, uv, ruff (levels 8–9); mypy/Pyright (level 12); interview prep with Stanford CS9 + MIT 6.006 (level 14).
+- T5: intro describes the real structure and lists every source-policy exception; license table synced.
 
 ## Verification evidence
 
-- Link check over README URLs: 146 of 152 return 200; the 6 others are pre-existing links blocked to bots or unreachable from this host (docs.ansible.com 429, stat110.hsites.harvard.edu 403, learnenglish.britishcouncil.org and man7.org timeouts); all new or changed URLs return 200.
-- Structural readback: every README content section has a TRACKER section; all 14 tables with an exercise column have a non-empty exercise cell in every row; CS50W appears once in TRACKER.
+- Link check: 146 of 152 README URLs return 200; the other 6 are pre-existing links blocked to bots or unreachable from this host (docs.ansible.com 429, stat110.hsites.harvard.edu 403, learnenglish.britishcouncil.org and man7.org timeouts, two that returned 200 on retry). All new or changed URLs return 200.
+- Structural readback: every README content section has a TRACKER section; every exercise cell is filled; CS50W appears once per file.
+- Parent spot check: `git log main..HEAD` shows 4 commits with no AI attribution; working tree clean; README section order matches "Orden recomendado".
+
+## Next step
+
+User decides whether to merge `docs/mapa-a-10` into `main` and push.
