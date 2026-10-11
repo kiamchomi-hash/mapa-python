@@ -18,10 +18,10 @@ The app exists only as a private claude.ai artifact (https://claude.ai/artifact/
 
 ## Tasks
 
-- [ ] T1 `app/`: move generator and template into the repo; `python3 app/build_app.py` writes the standalone HTML; standalone mode hides sync wording.
-- [ ] T2 `android/`: WebView app loading the bundled HTML offline; external links open in the browser; back button navigates the app.
-- [ ] T3 Workflow: build HTML, assemble signed release APK, publish/update a GitHub Release with a stable download URL.
-- [ ] T4 Docs: install instructions in README; launcher note.
+- [x] T1 `app/`: move generator and template into the repo; `python3 app/build_app.py` writes the standalone HTML; standalone mode hides sync wording. Commit `aea87c7`. Route: delegated writer.
+- [x] T2 `android/`: WebView app loading the bundled HTML offline; external links open in the browser; back button navigates the app. Commit `5e78a7a`. Route: delegated writer.
+- [x] T3 Workflow: build HTML, assemble signed release APK, publish/update a GitHub Release with a stable download URL. Commit `d342c94`. Route: delegated writer.
+- [x] T4 Docs: install instructions in README; launcher note. Commit `959e6b8`. Route: delegated writer.
 - [ ] T5 (user-gated) Create signing key + repo secrets, push, verify CI run and the APK download.
 
 ## Checks
@@ -30,4 +30,21 @@ The app exists only as a private claude.ai artifact (https://claude.ai/artifact/
 
 ## Progress
 
-Created. Desktop launcher done outside the repo (~/.local/share/applications/mapa-python.desktop, ~/Escritorio). Next: T1.
+Created. Desktop launcher done outside the repo (~/.local/share/applications/mapa-python.desktop, ~/Escritorio).
+
+T1–T4 done on `feat/app-android` (not pushed).
+
+- T1: `app/build_app.py --mode artifact|standalone --out <file>`; `app/template.html` has the route(scroll) fix baked in and placeholders `__DATA__` / `__LOCAL_LABEL__` ("guardado en este dispositivo" in artifact, "guardado en este celular" in standalone). Standalone wraps the fragment in a full document with a small reset (body margin 0, safe-area padding). `app/dist/` ignored.
+- T2: AGP 8.7.3 (official notes: min Gradle 8.9, JDK 17, max API 35), compile/target 35, min 24, Java 17, no dependencies. `MainActivity` (plain Activity): WebView on `file:///android_asset/index.html`, JS + DOM storage, no multiple windows (target=_blank stays in the client), non-file URLs open via ACTION_VIEW, back walks WebView history, state saved/restored, configChanges for rotation, algorithmic darkening off on API 33+, system-bar padding on API 35+ (edge-to-edge). Adaptive icon in `drawable-anydpi-v26/ic_launcher.xml` with a vector legacy fallback `drawable/ic_launcher.xml` (same resource name, so `android:icon="@drawable/ic_launcher"` covers both).
+- T3: `.github/workflows/android.yml`; secrets `ANDROID_KEYSTORE_BASE64`, `ANDROID_KEYSTORE_PASSWORD`, `ANDROID_KEY_ALIAS`, `ANDROID_KEY_PASSWORD`. Publishes to release tag `app` on `main` and, temporarily, `feat/app-android`; refuses to publish unsigned APKs. Download URL: https://github.com/kiamchomi-hash/mapa-python/releases/download/app/mapa-python.apk
+- T4: README section "App para el celular" after the plan-ia line.
+
+## Verification evidence
+
+- Generator: both modes generated twice, `cmp` identical (deterministic); artifact output byte-identical to the published prototype `mapa-python-app.html` (104510 bytes); 6 fases / 68 items, 15 niveles / 107 items. Inline script passes `new Function` and the data passes `JSON.parse` in node 24 for both modes.
+- Android XML: all 9 resource/manifest files well-formed (python minidom). Java not compiled locally (no Android SDK/android.jar); API levels reviewed by hand. The CI build is the first real compile.
+- Workflow: YAML parses with PyYAML 6.0.1; every `run:` script passes `bash -n`; action tags checkout@v4, setup-python@v5, setup-java@v4, gradle/actions@v4 (`gradle-version` input), upload-artifact@v4 exist. actionlint/shellcheck not installed.
+
+## Next step
+
+T5: user confirms signing key + secrets + push; then verify the CI run, the signature step and the APK download. After merge, remove the temporary `feat/app-android` trigger.
