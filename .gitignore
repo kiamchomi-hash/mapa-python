@@ -1,0 +1,2 @@
+# Generated app pages (python3 app/build_app.py --out app/dist/...)
+app/dist/

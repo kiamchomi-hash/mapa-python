@@ -1,0 +1,287 @@
+<title>Mapa Python</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: one narrow study column; list of phases -> phase detail with collapsible sections and checklists. */
+:root {
+  --bg: #f3f5f7;
+  --surface: #ffffff;
+  --fg: #16202b;
+  --muted: #5b6876;
+  --line: #d9e0e7;
+  --accent: #2f6aa3;      /* Python blue */
+  --mark: #f4c430;        /* Python yellow, used for progress */
+  --mark-ink: #3b2f00;
+  --ok: #2e7d4f;
+  --code-bg: #e9eef3;
+  --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0f151c; --surface: #17202a; --fg: #e6edf3; --muted: #93a1af; --line: #2a3644;
+  --accent: #7fb2e5; --mark: #f4c430; --mark-ink: #2a2000; --ok: #5cc28a; --code-bg: #1f2a36; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #0f151c; --surface: #17202a; --fg: #e6edf3; --muted: #93a1af; --line: #2a3644;
+  --accent: #7fb2e5; --mark: #f4c430; --mark-ink: #2a2000; --ok: #5cc28a; --code-bg: #1f2a36; color-scheme: dark }
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font: 16px/1.55 var(--body); }
+.wrap { max-width: 44rem; margin: 0 auto; padding-inline: 16px; padding-block: 12px 64px; }
+a { color: var(--accent); text-underline-offset: 2px; }
+a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+code { font: 0.86em var(--mono); background: var(--code-bg); padding: 0.1em 0.35em; border-radius: 4px; overflow-wrap: anywhere; }
+pre { background: var(--code-bg); padding: 12px; border-radius: 8px; overflow-x: auto; font: 0.85rem/1.5 var(--mono); }
+pre code { background: none; padding: 0; }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; line-height: 1.15; margin: 0; }
+
+header.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); padding-block: 10px; display: grid; gap: 10px; border-bottom: 1px solid var(--line); }
+.brand { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.brand h1 { font-size: 1.35rem; font-weight: 800; letter-spacing: -0.01em; }
+.sync { font: 0.75rem var(--mono); color: var(--muted); white-space: nowrap; }
+.seg { display: grid; grid-template-columns: 1fr 1fr; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 3px; }
+.seg button { font: 600 0.95rem var(--body); border: 0; background: none; color: var(--muted); padding: 8px; border-radius: 8px; cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--accent); color: var(--surface); }
+
+.summary { display: grid; gap: 8px; margin-block: 18px 8px; }
+.summary .big { font: 800 2rem/1 var(--display); font-variant-numeric: tabular-nums; }
+.summary .big small { font: 400 1rem var(--body); color: var(--muted); }
+.summary p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+.bar { height: 8px; background: var(--line); border-radius: 99px; overflow: hidden; }
+.bar > i { display: block; height: 100%; background: var(--mark); border-radius: 99px; transition: width .3s; }
+
+.continue { display: grid; gap: 4px; text-decoration: none; color: var(--fg); background: var(--surface); border: 1px solid var(--line); border-left: 0; border-radius: 12px; padding: 14px 16px; margin-block: 14px; box-shadow: inset 4px 0 0 var(--mark); }
+.continue .lbl { font: 600 0.72rem var(--mono); text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+.continue strong { font: 700 1.1rem var(--display); }
+
+.list { list-style: none; margin: 0; padding: 0; display: grid; }
+.list li + li { border-top: 1px solid var(--line); }
+.row { display: grid; grid-template-columns: 2.6rem 1fr auto; gap: 12px; align-items: center; padding-block: 12px; text-decoration: none; color: var(--fg); }
+.num { font: 600 0.9rem var(--mono); color: var(--muted); font-variant-numeric: tabular-nums; }
+.row .t { min-width: 0; display: grid; gap: 6px; }
+.row .t b { font-weight: 700; line-height: 1.3; }
+.row .t .bar { height: 5px; }
+.row .h { font: 0.8rem var(--mono); color: var(--muted); text-align: right; font-variant-numeric: tabular-nums; }
+.row.done .num { color: var(--ok); }
+.group { font: 600 0.72rem var(--mono); text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); padding-block: 18px 4px; }
+.extra { display: block; margin-top: 18px; }
+
+.back { display: inline-flex; gap: 6px; align-items: center; font-weight: 700; text-decoration: none; padding-block: 14px 4px; }
+.unit h2 { font-size: 1.7rem; font-weight: 800; margin-block: 6px 10px; }
+.unit .goal { font-size: 1.05rem; margin: 0 0 12px; }
+.meta { display: flex; flex-wrap: wrap; gap: 8px; margin-block: 0 14px; }
+.chip { font: 0.8rem var(--mono); background: var(--surface); border: 1px solid var(--line); border-radius: 99px; padding: 3px 10px; }
+.chip.req { font-family: var(--body); font-size: 0.85rem; }
+details { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; margin-block: 10px; }
+summary { cursor: pointer; padding: 12px 14px; font: 700 1.05rem var(--display); display: flex; justify-content: space-between; gap: 10px; list-style: none; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; font-family: var(--mono); color: var(--muted); }
+details[open] > summary::after { content: "–"; }
+summary .cnt { font: 0.8rem var(--mono); color: var(--muted); margin-left: auto; align-self: center; }
+.sec { padding: 0 14px 12px; min-width: 0; }
+.sec ul, .sec ol { padding-left: 1.2rem; margin: 6px 0; display: grid; gap: 6px; }
+.sec p { margin: 8px 0; }
+ul.check { list-style: none; padding-left: 0; }
+ul.check label { display: grid; grid-template-columns: 1.5rem 1fr; gap: 8px; align-items: start; cursor: pointer; padding: 6px 4px; border-radius: 6px; }
+ul.check input { width: 1.2rem; height: 1.2rem; margin-top: 0.15rem; accent-color: var(--ok); }
+ul.check input:checked + span { color: var(--muted); text-decoration: line-through; text-decoration-color: var(--muted); }
+.tw { overflow-x: auto; }
+table { border-collapse: collapse; font-size: 0.9rem; min-width: 30rem; }
+th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.folder { display: inline-block; margin-top: 8px; font-size: 0.95rem; }
+.note { color: var(--muted); font-size: 0.85rem; margin-top: 28px; }
+@media (prefers-reduced-motion: reduce) { .bar > i { transition: none; } }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div class="brand"><h1>Mapa Python</h1><span class="sync" id="sync">__LOCAL_LABEL__</span></div>
+    <div class="seg" role="group" aria-label="Plan">
+      <button id="tab-ia" type="button" aria-pressed="true">Plan IA</button>
+      <button id="tab-mapa" type="button" aria-pressed="false">Mapa completo</button>
+    </div>
+  </header>
+  <main id="view"></main>
+</div>
+
+<script type="application/json" id="data">__DATA__</script>
+<script>
+(function () {
+  const DATA = JSON.parse(document.getElementById("data").textContent);
+  const PLANS = {
+    ia: { name: "Plan IA", milestone: 825, mileLabel: "Hito de empleo como AI Engineer junior", prefix: "Fase" },
+    mapa: { name: "Mapa completo", milestone: 1090, mileLabel: "Hito de empleo junior (niveles 0–14)", prefix: "Nivel" }
+  };
+  const LS = "mapa-python-progress";
+  let done = {};
+  try { done = JSON.parse(localStorage.getItem(LS) || "{}") || {}; } catch (e) { done = {}; }
+  let plan = "ia";
+  try { plan = localStorage.getItem(LS + "-plan") || "ia"; } catch (e) {}
+  if (!PLANS[plan]) plan = "ia";
+
+  const view = document.getElementById("view");
+  const syncEl = document.getElementById("sync");
+
+  function unitProgress(u) {
+    let n = 0;
+    for (let i = 1; i <= u.items; i++) if (done[u.id + "-" + i]) n++;
+    return { n: n, total: u.items, frac: u.items ? n / u.items : 0 };
+  }
+  function hoursDone(units) {
+    return Math.round(units.reduce((s, u) => s + u.hours * unitProgress(u).frac, 0));
+  }
+  function el(html) { const t = document.createElement("template"); t.innerHTML = html.trim(); return t.content; }
+  function pad(n) { return String(n).padStart(2, "0"); }
+
+  function renderList() {
+    const P = PLANS[plan], units = DATA[plan].units;
+    const hd = hoursDone(units);
+    const totalHours = units.reduce((s, u) => s + u.hours, 0);
+    const pct = Math.min(100, (hd / P.milestone) * 100);
+    const next = units.find(u => unitProgress(u).frac < 1);
+    let html = '<section class="summary"><div class="big">' + hd + ' h <small>de ' + P.milestone + ' h</small></div>' +
+      '<div class="bar" aria-hidden="true"><i style="width:' + pct.toFixed(1) + '%"></i></div>' +
+      '<p>' + P.mileLabel + '. Las horas avanzan a medida que marcás ejercicios y criterios de cada ' + P.prefix.toLowerCase() + '.</p></section>';
+    if (next) {
+      const p = unitProgress(next);
+      html += '<a class="continue" href="#' + next.id + '"><span class="lbl">' + (p.n ? "Seguí con" : "Empezá por") + '</span><strong>' + next.title + '</strong><span>' + p.n + ' de ' + p.total + ' tildados · ' + next.hours + ' h</span></a>';
+    }
+    if (plan === "ia") html += '<a class="extra" href="#reglas">Cómo estudiar con IA: las 7 reglas</a>';
+    let lastGroup = null;
+    html += '<ul class="list">';
+    units.forEach(u => {
+      const p = unitProgress(u);
+      if (plan === "mapa" && u.group && u.group !== lastGroup) {
+        html += '</ul><div class="group">' + u.group + '</div><ul class="list">';
+        lastGroup = u.group;
+      }
+      const shortTitle = u.title.replace(/^(Fase|Nivel) \d+ – /, "");
+      html += '<li><a class="row' + (p.frac === 1 ? " done" : "") + '" href="#' + u.id + '"><span class="num">' + (p.frac === 1 ? "✓" : pad(u.num)) + '</span>' +
+        '<span class="t"><b>' + shortTitle + '</b><span class="bar"><i style="width:' + (p.frac * 100).toFixed(0) + '%"></i></span></span>' +
+        '<span class="h">' + p.n + '/' + p.total + '<br>' + u.hours + ' h</span></a></li>';
+    });
+    html += '</ul>';
+    if (plan === "ia") html += '<a class="extra" href="#despues">Después del hito: qué estudiar mientras trabajás</a>';
+    html += '<p class="note">' + (plan === "ia" ? "Total del plan hasta el hito: " : "Total de los niveles 0–14 (incluye las cuatro especializaciones del nivel 13): ") + totalHours + ' h.</p>';
+    view.replaceChildren(el(html));
+  }
+
+  function renderUnit(u) {
+    const p = unitProgress(u);
+    let html = '<a class="back" href="#">← ' + PLANS[plan].name + '</a><article class="unit"><h2>' + u.title + '</h2>' +
+      '<p class="goal">' + u.goal + '</p><div class="meta"><span class="chip">' + u.hours + ' h</span><span class="chip" id="cnt">' + p.n + ' de ' + p.total + ' tildados</span>' +
+      (u.req ? '<span class="chip req">Requisitos: ' + u.req + '</span>' : '') + '</div>';
+    u.sections.forEach(s => {
+      const openByDefault = /Ejercicios|Listo cuando|Empezá acá/.test(s.name);
+      const boxes = (s.html.match(/type="checkbox"/g) || []).length;
+      html += '<details' + (openByDefault ? " open" : "") + '><summary>' + s.name + (boxes ? '<span class="cnt" data-sec></span>' : '') + '</summary><div class="sec">' + s.html + '</div></details>';
+    });
+    html += '<a class="folder" href="' + u.folder + '" target="_blank" rel="noopener">Abrir la carpeta en GitHub</a></article>';
+    view.replaceChildren(el(html));
+    view.querySelectorAll('input[type="checkbox"][data-id]').forEach(cb => { cb.checked = !!done[cb.dataset.id]; });
+    updateCounts(u);
+  }
+
+  function updateCounts(u) {
+    const p = unitProgress(u);
+    const c = document.getElementById("cnt");
+    if (c) c.textContent = p.n + " de " + p.total + " tildados";
+    view.querySelectorAll("details").forEach(d => {
+      const cnt = d.querySelector("[data-sec]");
+      if (!cnt) return;
+      const all = d.querySelectorAll('input[type="checkbox"]');
+      let n = 0; all.forEach(b => { if (b.checked) n++; });
+      cnt.textContent = n + "/" + all.length;
+    });
+  }
+
+  function renderStatic(title, htmlBody) {
+    view.replaceChildren(el('<a class="back" href="#">← Plan IA</a><article class="unit"><h2>' + title + '</h2><div class="sec" style="padding:0">' + htmlBody + '</div></article>'));
+  }
+
+  function findUnit(id) {
+    for (const k of Object.keys(DATA)) { const u = DATA[k].units.find(x => x.id === id); if (u) return [k, u]; }
+    return null;
+  }
+
+  function route(scroll) {
+    const h = location.hash.slice(1);
+    setPlanButtons();
+    if (h === "reglas") { plan = "ia"; setPlanButtons(); renderStatic("Cómo estudiar con IA", DATA.ia.rules); if (scroll) window.scrollTo(0, 0); return; }
+    if (h === "despues") { plan = "ia"; setPlanButtons(); renderStatic("Después del hito", DATA.ia.after); if (scroll) window.scrollTo(0, 0); return; }
+    const f = h && findUnit(h);
+    if (f) { plan = f[0]; setPlanButtons(); renderUnit(f[1]); if (scroll) window.scrollTo(0, 0); return; }
+    renderList();
+  }
+
+  function setPlanButtons() {
+    document.getElementById("tab-ia").setAttribute("aria-pressed", String(plan === "ia"));
+    document.getElementById("tab-mapa").setAttribute("aria-pressed", String(plan === "mapa"));
+  }
+  function choosePlan(p) {
+    plan = p;
+    try { localStorage.setItem(LS + "-plan", p); } catch (e) {}
+    if (location.hash) location.hash = ""; else route();
+  }
+  document.getElementById("tab-ia").addEventListener("click", () => choosePlan("ia"));
+  document.getElementById("tab-mapa").addEventListener("click", () => choosePlan("mapa"));
+  window.addEventListener("hashchange", () => route(true));
+
+  // Persistence: localStorage always; the viewer's private db doc when available.
+  let remote = null, saveTimer = null;
+  function saveLocal() { try { localStorage.setItem(LS, JSON.stringify(done)); } catch (e) {} }
+  function scheduleRemote() {
+    if (!remote) return;
+    clearTimeout(saveTimer);
+    syncEl.textContent = "guardando…";
+    saveTimer = setTimeout(() => {
+      remote.set({ done: Object.assign({}, done), updatedAt: Date.now() })
+        .then(() => { syncEl.textContent = "sincronizado"; })
+        .catch(() => { syncEl.textContent = "sin conexión, guardado acá"; });
+    }, 700);
+  }
+
+  view.addEventListener("change", e => {
+    const cb = e.target;
+    if (!(cb instanceof HTMLInputElement) || !cb.dataset.id) return;
+    if (cb.checked) done[cb.dataset.id] = true; else delete done[cb.dataset.id];
+    saveLocal();
+    const f = findUnit(cb.dataset.id.replace(/-\d+$/, ""));
+    if (f) updateCounts(f[1]);
+    scheduleRemote();
+  });
+
+  route();
+
+  (async function connect() {
+    if (!window.claude || !window.claude.use) return;
+    try {
+      const [db, user] = await Promise.all([window.claude.use("db"), window.claude.use("user")]);
+      if (!db || !user) return;
+      const uid = await user.id();
+      if (!uid) return;
+      const ref = db.doc("data/users/" + uid + "/progress");
+      const snap = await ref.get();
+      const remoteDone = snap.exists ? ((snap.data() || {}).done || {}) : {};
+      const localKeys = Object.keys(done).filter(k => !remoteDone[k]);
+      done = Object.assign({}, remoteDone, done);
+      saveLocal();
+      remote = ref;
+      syncEl.textContent = "sincronizado";
+      if (!snap.exists || localKeys.length) scheduleRemote();
+      route();
+      ref.onSnapshot(s => {
+        if (!s.exists || s.metadata.hasPendingWrites) return;
+        const d = (s.data() || {}).done || {};
+        if (JSON.stringify(d) === JSON.stringify(done)) return;
+        done = Object.assign({}, d);
+        saveLocal();
+        route();
+      }, () => { syncEl.textContent = "sin conexión, guardado acá"; });
+    } catch (e) {
+      syncEl.textContent = "__LOCAL_LABEL__";
+    }
+  })();
+})();
+</script>
