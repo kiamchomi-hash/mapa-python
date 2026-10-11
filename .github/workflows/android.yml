@@ -124,6 +124,7 @@ jobs:
   # the github-pages environment rejects other branches by default.
   pages:
     if: github.ref == 'refs/heads/main'
+    needs: build
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -144,6 +145,13 @@ jobs:
 
       - name: Generate the page
         run: python3 app/build_app.py --mode standalone --out _site/index.html
+
+      # Same-origin direct download: some phone browsers fail on the release
+      # asset redirect, so the APK is also served from Pages.
+      - uses: actions/download-artifact@v4
+        with:
+          name: mapa-python-apk
+          path: _site
 
       - uses: actions/configure-pages@v6
 
