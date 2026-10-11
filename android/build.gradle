@@ -1,0 +1,5 @@
+// AGP 8.7.x needs Gradle >= 8.9 and JDK 17 and supports up to API 35.
+// CI installs Gradle 8.10.2 (see .github/workflows/android.yml).
+plugins {
+    id "com.android.application" version "8.7.3" apply false
+}

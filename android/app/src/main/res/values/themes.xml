@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Light platform theme: on API 33+ the WebView's prefers-color-scheme
+         follows this theme, so the page renders its light palette. -->
+    <style name="AppTheme" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@color/page_bg</item>
+        <item name="android:statusBarColor">@color/page_bg</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+</resources>

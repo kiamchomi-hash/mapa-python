@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Matches the page background (CSS variable bg) in app/template.html (light). -->
+    <color name="page_bg">#f3f5f7</color>
+    <color name="icon_bg">#2f6aa3</color>
+    <color name="icon_fg">#f4c430</color>
+</resources>
