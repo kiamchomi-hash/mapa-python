@@ -22,7 +22,7 @@ The app exists only as a private claude.ai artifact (https://claude.ai/artifact/
 - [x] T2 `android/`: WebView app loading the bundled HTML offline; external links open in the browser; back button navigates the app. Commit `5e78a7a`. Route: delegated writer.
 - [x] T3 Workflow: build HTML, assemble signed release APK, publish/update a GitHub Release with a stable download URL. Commit `d342c94`. Route: delegated writer.
 - [x] T4 Docs: install instructions in README; launcher note. Commit `959e6b8`. Route: delegated writer.
-- [ ] T5 (user-gated) Create signing key + repo secrets, push, verify CI run and the APK download.
+- [x] T5 (user-gated) Create signing key + repo secrets, push, verify CI run and the APK download.
 
 ## Checks
 
@@ -48,3 +48,11 @@ T1–T4 done on `feat/app-android` (not pushed).
 ## Next step
 
 T5: user confirms signing key + secrets + push; then verify the CI run, the signature step and the APK download. After merge, remove the temporary `feat/app-android` trigger.
+
+## T5 evidence (2026-10-11)
+
+- Local build: Android SDK cmdline-tools 15859902 (sha256 verified) + Gradle 8.10.2 (sha256 verified); user accepted SDK licenses. `gradle -p android assembleRelease` OK; apksigner verifies, package io.github.kiamchomihash.mapapython, minSdk 24, targetSdk 35.
+- Signing key: ~/.android-keys/mapa-python.jks (outside repo, 600); cert SHA-256 b9cf90a9...c0b4be. Four repo secrets set with gh.
+- CI run 38170024435 on feat/app-android: success, all steps green, release `app` published.
+- Download URL returns 200 (35 KB); downloaded APK signed with the same certificate.
+- Pending: on-device check by the user; merge into main, then remove the temporary branch trigger from the workflow.
