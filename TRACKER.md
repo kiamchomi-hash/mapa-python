@@ -1,17 +1,19 @@
 # Tracker de avance
 
-Marcá cada casilla solo cuando puedas resolver los ejercicios del tema (columna "Ejercicios" del README) sin mirar la teoría y tengas su proyecto en la carpeta `proyecto/`. Las secciones siguen el orden recomendado del [README](README.md#orden-recomendado); los tracks paralelos se van marcando al mismo tiempo que las etapas.
+Para empezar: [niveles/nivel-00-preparacion](niveles/nivel-00-preparacion/). Cada nivel tiene su carpeta en [`niveles/`](niveles/).
+
+Marcá cada casilla solo cuando puedas resolver los ejercicios del tema (columna "Ejercicios" del README) sin mirar la teoría y tengas su proyecto en la carpeta `proyecto/` de ese nivel. Las secciones siguen el orden recomendado del [README](README.md#orden-recomendado); los tracks paralelos se van marcando al mismo tiempo que las etapas.
 
 Para marcar una casilla, editá este archivo y cambiá `- [ ]` por `- [x]`. Las horas entre paréntesis son las estimadas en el README (sección "Tiempo estimado").
 
 ## Etapa 1 – Fundamentos
 
-- [ ] Nivel 0 – Preparación: instalación, terminal, `venv`, `pip`, Git básico (15 h)
-- [ ] Nivel 1 – Primeros pasos: variables, tipos, operadores (15 h)
-- [ ] Nivel 2 – Control de flujo: condicionales, bucles, `match` (20 h)
-- [ ] Nivel 3 – Funciones: parámetros, retorno, scope (20 h)
-- [ ] Nivel 4 – Colecciones: listas, tuplas, diccionarios, conjuntos (25 h)
-- [ ] Nivel 5 – Errores y archivos: excepciones, CSV, JSON, `re`, `logging` (30 h)
+- [ ] [Nivel 0](niveles/nivel-00-preparacion/) – Preparación: instalación, terminal, `venv`, `pip`, Git básico (15 h)
+- [ ] [Nivel 1](niveles/nivel-01-primeros-pasos/) – Primeros pasos: variables, tipos, operadores (15 h)
+- [ ] [Nivel 2](niveles/nivel-02-control-de-flujo/) – Control de flujo: condicionales, bucles, `match` (20 h)
+- [ ] [Nivel 3](niveles/nivel-03-funciones/) – Funciones: parámetros, retorno, scope (20 h)
+- [ ] [Nivel 4](niveles/nivel-04-colecciones/) – Colecciones: listas, tuplas, diccionarios, conjuntos (25 h)
+- [ ] [Nivel 5](niveles/nivel-05-errores-y-archivos/) – Errores y archivos: excepciones, CSV, JSON, `re`, `logging` (30 h)
 
 ## Complemento de ciencias de la computación
 
@@ -24,19 +26,19 @@ Para marcar una casilla, editá este archivo y cambiá `- [ ]` por `- [x]`. Las 
 
 ## Etapa 2 – Programador sólido
 
-- [ ] Nivel 6 – Estructuras de datos y pensamiento algorítmico: pilas, colas, listas enlazadas, árboles, tablas hash, heaps, recursión, ordenamiento, Big O (60 h)
-- [ ] Nivel 7 – Programación orientada a objetos (35 h)
-- [ ] Nivel 8 – Organización y herramientas modernas: módulos, paquetes, `pyproject.toml`, `uv`, paquete publicado en TestPyPI (30 h)
-- [ ] Nivel 9 – Calidad: PEP 8, `ruff`, testing con pytest, debugging, Git a fondo (Pro Git) (40 h)
-- [ ] Nivel 10 – Diseño de software: MIT 6.102, clases 01–09 aplicadas en Python (60 h)
+- [ ] [Nivel 6](niveles/nivel-06-estructuras-de-datos/) – Estructuras de datos y pensamiento algorítmico: pilas, colas, listas enlazadas, árboles, tablas hash, heaps, recursión, ordenamiento, Big O (60 h)
+- [ ] [Nivel 7](niveles/nivel-07-programacion-orientada-a-objetos/) – Programación orientada a objetos (35 h)
+- [ ] [Nivel 8](niveles/nivel-08-organizacion-del-codigo/) – Organización y herramientas modernas: módulos, paquetes, `pyproject.toml`, `uv`, paquete publicado en TestPyPI (30 h)
+- [ ] [Nivel 9](niveles/nivel-09-calidad/) – Calidad: PEP 8, `ruff`, testing con pytest, debugging, Git a fondo (Pro Git) (40 h)
+- [ ] [Nivel 10](niveles/nivel-10-diseno-de-software/) – Diseño de software: MIT 6.102, clases 01–09 aplicadas en Python (60 h)
 
 ## Especialización Web (nivel 13, adelantada)
 
-- [ ] Web: Harvard CS50W y MDN (150 h)
+- [ ] Web: Harvard CS50W y MDN (150 h), en la carpeta del [nivel 13](niveles/nivel-13-especializacion/)
 
 ## Nivel 14 – Listo para trabajar
 
-Requisito: Etapa 1, Etapa 2, CS61A y la especialización Web.
+Carpeta: [niveles/nivel-14-listo-para-trabajar](niveles/nivel-14-listo-para-trabajar/). Requisito: Etapa 1, Etapa 2, CS61A y la especialización Web.
 
 - [ ] Tutorial de PostgreSQL 18 (40 h)
 - [ ] PostgreSQL desde Python con psycopg 3 (10 h)
@@ -57,10 +59,10 @@ Requisito: Etapa 1, Etapa 2, CS61A y la especialización Web.
 
 ## Etapa 3 – Python avanzado
 
-- [ ] Nivel 11 – Python idiomático: generadores, decoradores, context managers (40 h)
-- [ ] Nivel 12 – Avanzado: type hints con mypy o Pyright en modo estricto, concurrencia, `asyncio`, profiling (60 h)
+- [ ] [Nivel 11](niveles/nivel-11-python-idiomatico/) – Python idiomático: generadores, decoradores, context managers (40 h)
+- [ ] [Nivel 12](niveles/nivel-12-avanzado/) – Avanzado: type hints con mypy o Pyright en modo estricto, concurrencia, `asyncio`, profiling (60 h)
 - [ ] Diseño de software a fondo: MIT 6.102, clases 10–19 y problem sets (90 h)
-- [ ] Nivel 13 – Especializaciones (ver "Especializaciones del nivel 13")
+- [ ] [Nivel 13](niveles/nivel-13-especializacion/) – Especializaciones (ver "Especializaciones del nivel 13")
 
 ## Track paralelo de matemáticas
 
@@ -90,7 +92,7 @@ Requisito: Etapa 1, Etapa 2, CS61A y la especialización Web.
 
 ## Especializaciones del nivel 13
 
-La web se marca en "Especialización Web (nivel 13, adelantada)".
+La web se marca en "Especialización Web (nivel 13, adelantada)". Carpeta de las cuatro: [niveles/nivel-13-especializacion](niveles/nivel-13-especializacion/).
 
 - [ ] Automatización: biblioteca estándar, Playwright, Ansible (50 h)
 - [ ] Datos: Berkeley Data 100, Matplotlib, Airflow (200 h)

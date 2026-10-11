@@ -10,9 +10,11 @@ El mapa va de cero a experto en Python y se organiza alrededor de un hito: el pr
 
 - **Versión de referencia:** Python 3.15, la última estable ([What's New in 3.15](https://docs.python.org/3/whatsnew/3.15.html)).
 - **Regla de avance:** no pasar de nivel hasta resolver los ejercicios del nivel sin mirar la teoría. Cada tabla tiene una columna de ejercicios con la fuente de práctica de cada nivel.
-- **Estructura de carpetas:** una carpeta por nivel, cada una con `teoria/`, `ejercicios/` y `proyecto/`.
+- **Estructura de carpetas:** una carpeta por nivel en [`niveles/`](niveles/), con el nombre `nivel-NN-tema` (por ejemplo, `nivel-00-preparacion`). Cada una tiene un README con fuentes, ejercicios y criterios para avanzar, y las subcarpetas `teoria/`, `ejercicios/` y `proyecto/`.
 - **Proporción sugerida:** 30% leer o ver clases, 70% escribir código.
 - **Después del hito de empleo:** lo que sigue es un menú, no una secuencia obligatoria. Elegís qué estudiar según tu trabajo y tus intereses; el orden de los pasos 5–8 solo indica qué requiere qué.
+
+Para empezar: [niveles/nivel-00-preparacion](niveles/nivel-00-preparacion/)
 
 Para marcar tu avance tema por tema: [TRACKER.md](TRACKER.md)
 
@@ -362,7 +364,7 @@ El proyecto final es construir un modelo de lenguaje pequeño desde cero; requie
 Ningún curso reemplaza estas cuatro prácticas, que se sostienen durante todo el camino.
 
 - **Leer código de calidad:** la biblioteca estándar de CPython (carpeta `Lib/`) es el mejor material; empezá por módulos chicos como `bisect`, `heapq` o `functools`.
-- **Proyectos propios:** uno por nivel, guardado en la carpeta `proyecto/` de ese nivel.
+- **Proyectos propios:** uno por nivel, guardado en la carpeta `proyecto/` de ese nivel dentro de [`niveles/`](niveles/); el README de cada nivel sugiere uno.
 - **Enseñar:** explicar cada tema por escrito, como si fuera para otra persona, revela lo que no entendiste.
 - **Contribuir:** a partir del bloque C, buscar issues marcados para principiantes en CPython siguiendo la [Python Developer's Guide](https://devguide.python.org/).
 
